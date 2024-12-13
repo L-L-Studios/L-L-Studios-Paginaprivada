@@ -1,3 +1,14 @@
+/*--------FUNCION PARA ALTERNAR EL BOTON TOGLE MENU--------*/
+// Seleccionar elementos
+const navbarToggler = document.getElementById('navbarToggler');
+const navbarLinks = document.getElementById('navbarLinks');
+
+// Alternar el menú al presionar el botón
+navbarToggler.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active'); // Activa o desactiva el menú
+});
+
+
 /*---MODO CLARO Y MODO OSCURO CON SWITCH---*/
 console.clear();
 
@@ -17,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
           : "Images/fondo-blanco-camara.jpg"; // Imagen para tema claro
   });
 });
-
 
 /*-------- SELECCIONAR CON UN CLICK AGRANDAR IMAGEN, DOBLE CLICK DEBE APARECER  */ 
 // Selecciona el contenedor de la imagen
@@ -43,40 +53,3 @@ wrapper.addEventListener('dblclick', function () {
     this.classList.remove('zoomed'); // Desactiva el zoom
   }
 });
-
-
-// Agrega un listener para detectar los clics o toques en el contenedor wrapper
-/*document.querySelector('.wrapper').addEventListener('click', function() {
-  this.classList.toggle('zoomed'); // Activa o desactiva el zoom
-});
-
-gsap.registerPlugin(ScrollTrigger);
-
-window.addEventListener("load", () => {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".wrapper",
-        start: "top top",
-        end: "+=150%",
-        pin: true,
-        scrub: true,
-        markers: true
-      }
-    })
-    .to(".image-container img", {
-      scale: 2,
-      z: 350,
-      transformOrigin: "center center",
-      ease: "power1.inOut"
-    })
-    .to(
-      ".section.inicio",
-      {
-        scale: 1.1,
-        transformOrigin: "center center",
-        ease: "power1.inOut"
-      },
-      "<"
-    );
-});*/

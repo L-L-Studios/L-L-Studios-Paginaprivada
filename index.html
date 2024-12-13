@@ -19,20 +19,24 @@
 
     <!-- Header - nabvar -->
     <header>
-        <nav class="nabvar">
+        <nav class="navbar">
             <div class="container-fluid">
                 <div class="menu">
-                    <img class="logo" src="Images/icon_l&lStudios.png" style="width: 40px; left: 0;">
-                    <a href="#inicio">inicio</a>
-                    <a href="#Paquetes">Paquetes</a>
-                    <a href="#contacto">contacto</a>
-
-                    <!-- switch para cambiar tema -->
-                    <label class="switch" style="right: 0;">
+                    <img class="logo" src="Images/icon_l&lStudios.png" alt="Logo" style="width: 40px;">
+                    <!-- Botón para menú colapsable -->
+                    <button class="navbar-toggler" id="navbarToggler" onclick="toggleMenu()">☰</button>
+                    <div class="navbar-links" id="navbarLinks">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#Paquetes">Paquetes</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                    <!-- Switch para cambiar tema -->
+                    <label class="switch">
                         <input type="checkbox" id="themeSwitch">
                         <span class="slider"></span>
                     </label>
-                </div> 
+
+                </div>
             </div>
         </nav>
         <div class="fondo-header"></div>
@@ -41,18 +45,17 @@
     <!-- Sections -->
     <div class="wrapper">
         <div class="content">
-          <section class="section inicio"> 
-            <div class="background-switch">
-                <!-- Imagen que cambia según el tema -->
-                <img id="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%">
-            </div>
-         </section>
-
-          <section class="section paquetes"></section>
-          <section class="section contacto"></section>
+            <section class="section inicio" id="inicio">
+                <div class="background-switch">
+                    <!-- Imagen que cambia según el tema -->
+                    <img id="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%">
+                </div>
+            </section>
+            <section class="section paquetes" id="Paquetes"></section>
+            <section class="section contacto" id="contacto"></section>
         </div>
         <div class="image-container">
-          <img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">
+            <img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">
         </div>
     </div>
 
