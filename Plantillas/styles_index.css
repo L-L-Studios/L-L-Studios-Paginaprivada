@@ -1,0 +1,224 @@
+/*Paleta de colores */
+/*  White - Rojo principal #CB2D2D -  Negro #252525
+    Rojo complementario #BA3C3C - Gris #414141 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ /*Utilidades del root*/
+:root{
+  --background-light: #ffffff; /*Fondo claro white*/
+  --background-dark: #252525; /*Fondo oscuro*/
+  --text-light: #414141;
+  --text-dark: #ffffff;
+}
+
+/*Cuerpo de la pagina*/
+body {
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--background-light) no-repeat fixed 100% 100%; ;
+  color: var(--text-light);
+  background-size: cover;
+}
+
+/*Modo oscuro para el cuerpo*/
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body.light-mode{
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.background-switch {
+  text-align: center;
+  top: 0;
+  margin-top: 0;
+}
+
+/*Header - nabvar*/
+header {
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header.dark-mode {
+  background-color: var(--background-dark);
+}
+
+.fondo-header{
+  filter: blur(10px);
+  top: 0;
+}
+
+.logo{
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.menu{
+  margin-left: 15px;
+  justify-items: center;
+}
+
+nav{
+  text-align: left;
+  position: relative;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+.menu a{
+  clear: right;
+  text-decoration: none;
+  color: var(--background-dark);
+  margin-left: 20px;
+  line-height: 60px;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  transition: all 250ms ease;
+}
+
+body.dark-mode .menu a {
+  color: var(--text-dark); /* Cambia a texto blanco en modo oscuro */
+}
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  right: 0;
+  margin-right: 20px;
+  margin-top: 15px;
+  padding: 8px 30px; /*tamaño*/
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.4em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.3em;
+  position: absolute;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff8c00,#CB2D2D 70%);
+  ;
+ transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+
+    
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  overflow-x: hidden;
+}
+
+.content .section {
+  width: 100%;
+  height: 100vh;
+}
+    
+.content .section.inicio {
+  /*background-image: url(https://images.unsplash.com/photo-1589848315097-ba7b903cc1cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+    
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 1s ease; /* Transición suave para el zoom */
+}
+
+/* Asegura que el contenedor de imagen no se distorsione en dispositivos móviles */
+@media (max-width: 768px) {
+  .image-container {
+    height: 100vh; /* Mantener la altura completa en móvil */
+  }
+
+  .image-container img {
+    object-position: center center; /* Mantener la imagen centrada */
+  }
+
+  .background-switch {
+    height: 100vh; /* Mantener la altura completa en móvil */
+  }
+
+  .background-switch img {
+    object-position: center center; /* Mantener la imagen centrada */
+  }
+}
+
+/* Efecto de zoom */
+.wrapper.zoomed .image-container img {
+  transform: scale(6); /* Aumenta el zoom */
+}
