@@ -24,10 +24,11 @@
                 <div class="menu">
                     <img class="logo" src="Images/icon_l&lStudios.png" alt="Logo" style="width: 40px;">
                     <!-- Botón para menú colapsable -->
-                    <button class="navbar-toggler" id="navbarToggler" onclick="toggleMenu()">☰</button>
+                    <button class="navbar-toggler" id="navbarToggler" onclick="toggleMenu()"> <i class="bi bi-list"></i> </button>
                     <div class="navbar-links" id="navbarLinks">
                         <a href="#inicio">Inicio</a>
-                        <a href="#Paquetes">Paquetes</a>
+                        <a href="#paquetes">Paquetes</a>
+                        <a href="#portafolio">Portafolio</a>
                         <a href="#contacto">Contacto</a>
                     </div>
                     <!-- Switch para cambiar tema -->
@@ -45,21 +46,47 @@
     <!-- Sections -->
     <div class="wrapper">
         <div class="content">
+            <!-- SECTION INICIO -->
             <section class="section inicio" id="inicio">
-                <div class="background-switch">
-                    <!-- Imagen que cambia según el tema -->
-                    <img id="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%">
+                <div class="content-inicio">
+                    <p class="titulo-LLstudios">L&L STUDIOS</p>
+
+                    <div class="background-switch">
+                        <!-- Imagen que cambia según el tema -->
+                        <img id="themeImage" class="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%">
+                    </div>
                 </div>
+                
             </section>
-            <section class="section paquetes" id="Paquetes"></section>
-            <section class="section contacto" id="contacto"></section>
+            <br>
+
+            <!-- SECTION PAQUETES -->
+            <section class="section paquetes" id="paquetes">
+                <!-- Tarjetas -->
+                 <!-- Tarjetas Fotografia -->
+                  <h1>Paquetes</h1>
+
+            </section>
+            <br>
+
+            <!-- SECTION PORTAFOLIO -->
+            <section class="section portafolio" id="portafolio">
+                <h1>Portafolio</h1>
+
+            </section>
+            <br>
+
+            <!-- SECTION CONTACTO -->
+            <section class="section contacto" id="contacto">
+                <h3>Contacto</h3>
+
+            </section>
+
         </div>
         <div class="image-container">
             <img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">
         </div>
     </div>
-
-
        
    <script src="Plantillas/scripts_index.js"></script> 
 </body>

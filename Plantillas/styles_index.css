@@ -6,7 +6,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-     /*Utilidades del root*/
+     /*Utilidades del root para con modo claro-oscuro */
     :root{
       --background-light: #ffffff; /*Fondo claro white*/
       --background-dark: #252525; /*Fondo oscuro*/
@@ -109,6 +109,7 @@
     
     /* Estilos del botón toggle (Ocultado por defecto en pantallas grandes) */
     .navbar-toggler {
+      gap: 10px;
       display: none;
       background: none;
       border: none;
@@ -120,6 +121,9 @@
     .navbar-links {
       display: flex; /* Visible por defecto en pantallas grandes */
     }
+
+    /*Diseño del toogle menu colapsable*/
+    
     
     /* Navbar Responsivo */
     @media (max-width: 768px) {
@@ -158,7 +162,7 @@
       }
     }
     
-    /*-----SWITCH-----*/
+    /*-----SWITCH MODO CLARO-OSCURO -----*/
     /* The switch - the box around the slider */
     .switch {
       right: 0;
@@ -189,7 +193,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #f4f4f5;
+      background-color: #f1e8e8;
       transition: .4s;
       border-radius: 30px;
     }
@@ -218,32 +222,9 @@
       /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
       box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
     }
-    
-    
-        
-    .wrapper,
-    .content {
-      position: relative;
-      width: 100%;
-      z-index: 1;
-    }
-    
-    .content {
-      overflow-x: hidden;
-    }
-    
-    .content .section {
-      width: 100%;
-      height: 100vh;
-    }
-        
-    .content .section.inicio {
-      /*background-image: url(https://images.unsplash.com/photo-1589848315097-ba7b903cc1cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);*/
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    
+
+    /*IMAGEN PRINCIPAL-ZOOM*/
+    /*Imagen principal(circulo sin fondo)*/
     .image-container {
       width: 100%;
       height: 100vh;
@@ -263,6 +244,56 @@
       transition: transform 1s ease; /* Transición suave para el zoom */
     }
     
+    /* Efecto de zoom */
+    .wrapper.zoomed .image-container img {
+      transform: scale(6); /* Aumenta el zoom */
+    }
+
+    /*CONTENIDO - SECTIONS */
+    .wrapper,
+    .content {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    .content .section {
+      width: 100%;
+      height: 100vh;
+    }
+
+    /*Contenido inicio para centar texto dentro de img*/
+    .content-inicio{
+      position: relative;
+      width: 100%; 
+      height: auto;
+    }
+
+    /*Titulo L&L Studios centrado*/
+    .content-inicio .titulo-LLstudios {
+      position: absolute;
+      top: 50%; /* Centrado verticalmente */
+      left: 50%; /* Centrado horizontalmente */
+      transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
+      color: white; /* Cambia el color del texto según tu diseño */
+      font-size: 24px; /* Tamaño del texto */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
+      text-align: center;
+  }
+
+    /*Imagen modo claro-oscuro */
+    .themeImage {
+      width: 100%; /*ancho competo del contenedor*/
+      height: 100vh; /*alto completo del contenedor*/
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .themeImage img{
+      height: 100%;
+    }
+
+      /* RESPONSIVO IMAGEN - SECTIONS*/
     /* Asegura que el contenedor de imagen no se distorsione en dispositivos móviles */
     @media (max-width: 768px) {
       .image-container {
@@ -272,18 +303,15 @@
       .image-container img {
         object-position: center center; /* Mantener la imagen centrada */
       }
-    
-      .background-switch {
-        height: 100vh; /* Mantener la altura completa en móvil */
+
+      /*imageTheme- asegura que la imagen no se distorsion en celulares*/
+      .themeImage{
+        height: 100vh;
       }
-    
-      .background-switch img {
+
+      .themeImage img {
         object-position: center center; /* Mantener la imagen centrada */
       }
     }
     
-    /* Efecto de zoom */
-    .wrapper.zoomed .image-container img {
-      transform: scale(6); /* Aumenta el zoom */
-    }
-    
+
