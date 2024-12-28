@@ -1,0 +1,111 @@
+/*CONTENIDO - SECTIONS */
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.content .section {
+  width: 100%;
+  height: auto; /*Alto automatico dependiendo del contenido de cada section*/
+}
+
+.section {
+  scroll-margin-top: 90px; /* Espacio de margen del scroll con respecto al header */
+}
+
+/*Contenido inicio para centar texto dentro de img*/
+.content-inicio{
+  position: relative;
+  width: 100%; 
+  height: auto;
+  overflow: hidden;
+}
+
+.content-paquetes{
+  position: relative;
+  width: 100%; 
+  height: auto;
+}
+
+.content-portafolio{
+  position: relative;
+  width: 100%; 
+  height: auto;
+}
+
+.content-contacto{
+  position: relative;
+  width: 100%; 
+  height: auto;
+}
+
+/*Titulo L&L Studios centrado*/
+.content-inicio .titulo-LLstudios {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
+  color: #fff; /* Color del texto iluminado */
+  z-index: 2; /* Asegura que el texto esté sobre la imagen */
+  font-size: 4rem; /* Ajusta el tamaño del texto según sea necesario */
+}
+
+/* Efecto de texto "Luz que se enciende y apaga" */
+.titulo-LLstudios {
+  animation: lightEffect 4s infinite; /* Animación infinita */
+  text-shadow: 0 0 5px #fff, 0 0 10px #CB2D2D, 0 0 20px #CB2D2D, 
+               0 0 40px #CB2D2D, 0 0 80px #CB2D2D; /* Efecto de brillo */
+}
+
+/* Animación para encender y apagar */
+@keyframes lightEffect {
+  0%, 100% {
+    opacity: 0.3; /* Apagado (baja intensidad) */
+    text-shadow: 0 0 5px #333, 0 0 10px #333; /* Sombra débil */
+  }
+  50% {
+    opacity: 1; /* Encendido (alta intensidad) */
+    text-shadow: 0 0 10px #fff, 0 0 20px #CB2D2D, 0 0 40px #CB2D2D, 
+                 0 0 80px #CB2D2D, 0 0 100px #CB2D2D; /* Brillo máximo */
+  }
+}
+
+
+
+/*Imagen modo claro-oscuro */
+.themeImage {
+  width: 100%; /*ancho competo del contenedor*/
+  height: 100vh; /*alto completo del contenedor*/
+  object-fit: cover;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.themeImage img{
+  height: 100%;
+}
+
+  /* RESPONSIVO IMAGEN - SECTIONS*/
+/* Asegura que el contenedor de imagen no se distorsione en dispositivos móviles */
+@media (max-width: 768px) {
+  .image-container {
+    height: 100vh; /* Mantener la altura completa en móvil */
+  }
+
+  .image-container img {
+    object-position: center center; /* Mantener la imagen centrada */
+  }
+
+  /*imageTheme- asegura que la imagen no se distorsion en celulares*/
+  .themeImage{
+    height: 100vh;
+  }
+
+  .themeImage img {
+    object-position: center center; /* Mantener la imagen centrada */
+  }
+}
+

@@ -1,0 +1,488 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /*Utilidades del root para con modo claro-oscuro */
+    :root{
+        --background-light: #ffffff; /*Fondo claro white*/
+        --background-dark: #252525; /*Fondo oscuro*/
+        --background-blur-light: #ffffffb8; /*Fondo claro white con blur*/
+        --background-blur-dark: #252525b8; /*Fondo oscuro con blur*/
+        --text-light: #414141;
+        --text-dark: #ffffff;
+  
+    }
+
+    /*.paquetes{
+      background: linear-gradient(145deg, #212121, #282828);
+    }*/
+
+    
+    .gradient-1 {
+      width: 180px;
+      height: 160px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255, 105, 105, 0.7), rgba(250, 135, 160, 0.7));
+      position: absolute;
+      top: 34%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      animation: gradientMove 6s ease-in-out infinite; /* Animación para el movimiento */
+      filter: blur(100px);
+      z-index: -1;
+    }
+
+
+    /* Margen a los títulos */
+    #lbl_paquetes {
+      margin: 20px 20px; /* Márgenes superior e inferior */
+      font-size: 40px;
+    }
+
+    #lbl_paq_foto {
+      margin: 20px 20px; /* Márgenes superior e inferior */
+    }
+
+    /* Línea debajo de los títulos */
+    .lineapaquete {
+      width: 16%; /* La línea comienza con un ancho de 0 */
+      height: 3px; /* Altura de la línea */
+      background-color: #CB2D2D;
+      transition: width 1s ease-in-out; /* Animación suave de la línea */
+      margin-top: 4px; /* Espacio entre el texto y la línea */
+    }
+
+    /* Animación al pasar el ratón */
+    #lbl_paquetes:hover + .lineapaquete{
+      width: 100%; /* La línea se expande al 100% de ancho */
+    }
+
+    /*GRID TARJETAS GROUP*/ 
+    /* Contenedor principal de la cuadrícula */
+    .grid-container {
+      display: grid;
+      gap: 20px; /* Espaciado entre tarjetas */
+      padding: 20px;
+    }
+
+
+  /*DISEÑO DE TARJETA*/
+  .bgTarjeta {
+    background: linear-gradient(130deg, #fffffff5, #CB2D2D, #ffffffd8);
+    border-radius: 1.2em;
+    margin: 3px;
+    display: grid;
+    /*box-shadow: 0px 1rem 1.6rem -0.7rem #000000e1;*/
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 7px, rgba(0, 0, 0, 0.7) 
+    0px 7px 16px -3px, rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+  }
+
+  .tarjeta {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    flex: 1 1 10rem;
+    gap: 1em; /* Asegura espacio entre filas */
+    padding: 1rem 1em 1em 1em;
+    --flow-space: 0.5em;
+    border-radius: 15px;
+   
+    background-color: #BA3C3C;
+   
+    background: radial-gradient(circle at 100% 107%,  #d93030 30%, #252525 100%);
+    border: 1px solid #eceff1a4;
+    cursor: default;
+    overflow: hidden;
+    color: white;
+ /*
+    background: linear-gradient(145deg, #b72929, #d93030);*/
+  }
+
+  .tituloF {
+    font-weight: 300;
+    font-size: 2em;
+    margin-bottom: -10px; /* Incrementa el espacio inferior */
+    margin-right: 20px;
+    gap: 10px;
+    text-align: left;
+    color: #eceff1;
+    text-wrap: balance;
+  }
+
+    /* Línea roja */
+  .linea {
+    width: 60%;
+    height: 3px;
+    margin-top: 0;
+    left: 0;
+    background-color: #e0e8ef;
+    margin: 0;
+    border-radius: 3px;
+  }
+
+    /* Semicírculo con el ícono */
+  .semicirculo {
+    position: absolute;
+    top: 6px;
+    right: 6px; 
+    width: 60px;
+    height: 60px;
+    gap: 10px;
+    margin-left: 20px;
+    border-radius: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(235, 235, 235, 0.253);
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .semicirculo i {
+    font-size: 24px;
+    color: white;
+  }
+
+  /*iconos svg*/
+  .icono_F{
+    width: 35px;
+    height: auto;
+    fill: white;
+  }
+
+  .icono_V{
+    width: 35px;
+    height: auto;
+    fill: white;
+  }
+
+  .icono_FV{
+    width: 40px;
+    height: auto;
+    fill: white;
+  }
+
+  .back {
+    position: absolute;
+    background: linear-gradient(20deg, #FCC737 0%, #F26B0F);
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+    border-radius: 40%; /* Forma circular */
+    box-shadow: -5px 0 10px #FCC737, 5px 0 10px #F26B0F;
+    transform: translateY(10px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .backVideo {
+    position: absolute;
+    background: linear-gradient(20deg, #6dd5ed 0%, #2193b0);
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+    border-radius: 30%; /* Forma circular */
+    box-shadow: -5px 0 10px #6dd5ed, 5px 0 10px #2193b0;
+    transform: translateY(10px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .backFV {
+    position: absolute;
+    background: linear-gradient(20deg, rgb(174, 6, 216) 0%, rgb(85, 31, 200));
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+    border-radius: 30%; /* Forma circular */
+    box-shadow: -5px 0 10px rgb(140, 12, 147), 5px 0 10px rgb(85, 31, 200);
+    transform: translateY(10px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .semicirculo:nth-child(1):hover{
+    transform: translateY(8px);
+    box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+      10px 0 70px rgb(200, 79, 31);
+  }
+
+  .semicirculo:nth-child(2):hover{
+    transform: translateY(8px);
+    box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+      10px 0 50px rgb(200, 79, 31);
+  }
+
+  .semicirculo:nth-child(3):hover{
+    transform: translateY(8px);
+    box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+      10px 0 50px rgb(31, 104, 200);
+  }
+
+  .semicirculo:nth-child(4):hover{
+    transform: translateY(8px);
+    box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+      10px 0 50px rgb(31, 104, 200);
+  }
+
+
+  .semicirculo:hover {
+    transform: translateY(8px);
+    box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+      10px 0 50px rgb(85, 31, 200);
+  }
+
+  .semicirculo:hover ~ .back {
+    transform: translateY(8px); /* Ajuste al fondo durante hover */
+  }
+
+  /* Lista */
+  .lista-tarjeta {
+    list-style: circle;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lista-tarjeta li {
+    margin: 5px 16px;
+    font-size: 1em;
+    color: #e0e0e0;
+  }
+
+  /* tarjeta de precio */
+  .tarjeta-precio {
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #e0e8ef;
+    background-color:  #414141;
+    border-radius: 20px;
+    padding: 16px 24px 16px 28px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  body.dark-mode .tarjeta-precio {
+    color: #c07070;
+    background-color: #e0e8ef;
+  }
+
+
+  .lista-tarjeta > * + * {
+    margin-top: var(--flow-space, 1.25em);
+  }
+
+
+
+/* Tarjeta de info costo adicional */
+/* Estilo de la tarjeta */
+.gradient-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 20px 20px;
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: linear-gradient(145deg,#f3d243, #ffffff, #f3d243); /* Blanco y amarillo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 0, 0, 0.5); /* Borde rojo con efecto */
+}
+
+.container-card {
+  position: relative;
+}
+
+/* El círculo del icono */
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: #f1c40f; /* Amarillo brillante */
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.circle:hover {
+  background: #f39c12; /* Amarillo más intenso */
+  transform: translateX(-50%) scale(1.1); /* Hace que el círculo se agrande un poco */
+}
+
+.icon-img {
+  width: 40px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.circle:hover .icon-img {
+  transform: rotate(360deg) scale(1.2); /* Rota y agranda el icono */
+}
+
+/* El fondo con desenfoque */
+.glass {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3); /* Fondo translúcido */
+  z-index: 1; /* Asegura que el texto esté por encima del fondo */
+}
+
+/* El fondo desenfocado detrás del texto */
+.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* Fondo blanco translúcido */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque solo en el fondo */
+  border-radius: 10px;
+  z-index: -1; /* Asegura que el fondo desenfocado quede detrás del texto */
+}
+
+/* Estilo del texto */
+.info-costo-adic {
+  font-size: 20px;
+  font-weight: 400;
+  color: black; /* Color oscuro para asegurar la visibilidad */
+  text-align: center;
+  padding: 10px;
+  line-height: 1.6;
+  z-index: 10; /* Asegura que el texto esté por encima del fondo */
+  position: relative; /* Para controlar el orden del texto y el fondo */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.info-costo-adic:hover {
+  color: black; /* Cambio de color en hover */
+  text-shadow: 0 0 10px rgba(241, 196, 15, 0.8);
+  animation: glow 1s ease-in-out infinite;
+}
+
+/* Animación de brillo para el texto */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(241, 196, 15, 1);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.8);
+  }
+}
+
+/* Fondo amarillo de la tarjeta */
+.bg-yellow-box {
+  background-color: transparent;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.gradient-cards {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    text-align: center;
+  }
+
+  .info-costo-adic {
+    font-size: 18px;
+  }
+
+}
+
+
+  /* PANTALLAS RESPONSIVAS */
+    /* Teléfonos pequeños (320px - 374px) */
+    @media (max-width: 374px) { 
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+      }
+
+     
+    }
+
+    /* Teléfonos medianos (375px - 424px) */
+    @media (min-width: 375px) and (max-width: 424px) { 
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+      }
+    }
+
+    /* Teléfonos grandes (425px - 767px) */
+    @media (min-width: 425px) and (max-width: 550px) { 
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+      }
+    }
+
+    /* Mini tables (551px - 720px) */
+    @media (min-width: 551px) and (max-width: 729px) { 
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 tarjeta por fila */
+      }
+    }
+
+    /* Tablets (730px - 1024px) */
+    @media (min-width: 730px) and (max-width: 1024px) { 
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+      }
+    }
+
+    /* Laptops (1025px - 1920px) */
+    @media (min-width: 1025px) and (max-width: 1920px) { 
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+      }
+    }
+
+    /* Pantallas 4K (1921px y más) */
+    @media (min-width: 1921px) { 
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+      }
+
+    }
+
+    

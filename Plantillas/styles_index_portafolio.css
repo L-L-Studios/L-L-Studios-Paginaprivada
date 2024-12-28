@@ -1,0 +1,16 @@
+    /*GRID TARJETAS GROUP*/
+    /* Contenedor principal de la cuadrícula */
+    .grid-container {
+        display: grid;
+        gap: 20px; /* Espaciado entre tarjetas */
+        padding: 20px;
+    }
+
+    /* Margen a los títulos */
+    #lbl_portafolio{
+        margin: 20px 20px; /* Márgenes superior e inferior */
+        font-size: 40px;
+    }
+
+
+
