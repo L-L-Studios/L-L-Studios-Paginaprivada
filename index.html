@@ -26,7 +26,7 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="menu">
-                    <a href="#inicio"> <img class="logo" src="Images/icon_l&lStudios.png" alt="Logo" style="width: 40px;"> </a>
+                    <a href="#inicio"> <img class="logo" src="Images/icon_l&lStudios.png" alt="Logo" style="width: 40px;" ondragstart="return false;"> </a>
                     
                     <!-- Botón para menú colapsable -->
                     <button class="navbar-toggler" id="navbarToggler" onclick="toggleMenu()"> <i class="bi bi-list"></i> </button>
@@ -54,11 +54,15 @@
             <!-- SECTION INICIO -->
             <section class="section inicio" id="inicio">
                 <div class="content-inicio">
+                  <div class="titulo-container">
+                    <div class="circles left-circles"></div>
                     <p class="titulo-LLstudios">L&L STUDIOS</p>
+                    <div class="circles right-circles"></div>
+                  </div>
 
                     <div class="background-switch">
                         <!-- Imagen que cambia según el tema -->
-                        <img id="themeImage" class="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%">
+                        <img id="themeImage" class="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%" draggable="false" ondragstart="return false;">
                     </div>
                 </div>
             </section>
@@ -112,13 +116,14 @@
                               </svg>
                                 </div>
                                 <div class="back"></div>
-                            <p class="tituloF">FOTOGRAFÍA</p>
+                            <p class="tituloF" >FOTOGRAFÍA</p>
                             <div class="linea"></div>
-                            <p class="paqueteF">Paquete 1</p>
+                            <p class="paqueteF" style="font-weight: 500; font-style: normal;">Paquete 1</p>
                             <ul class="lista-tarjeta" role="list">
-                                <li>Access to all features</li>
-                                <li>Unlimited storage</li>
-                                <li>No ads</li>
+                                <li>100-150 Fotos digitales con enlace de descarga</li>
+                                <li>25 fotos impresas 4x6'</li>
+                                <li>1 Foto impresa 8x10'</li>
+                                <li>1 Foto en resina 11x14'</li>
                             </ul>
                             <div class="tarjeta-precio">$175.00</div>
                         </div>
@@ -166,16 +171,17 @@
                                 <div class="back"></div>
                             <p class="tituloF">FOTOGRAFÍA</p>
                             <div class="linea"></div>
-                            <p class="paqueteF">Paquete 2</p>
+                            <p class="paqueteF" style="font-weight: 500; font-style: normal;">Paquete 2</p>
                             <ul class="lista-tarjeta" role="list">
-                                <li>Access to all features</li>
-                                <li>Unlimited storage</li>
-                                <li>No ads</li>
+                              <li>150-200 Fotos digitales con enlace de descarga</li>
+                              <li>50 fotos impresas 4x6'</li>
+                              <li>2 Foto impresa 8x10'</li>
+                              <li>1 Foto en resina 11x14'</li>
+                              <li>Video entregado en línea o enlace de descarga</li>
                             </ul>
                             <div class="tarjeta-precio">$200.00</div>
                         </div>
                      </div>
-
 
                      <!-- TARJETA DE FOTOGRAFIA Y VIDEO PAQUETE 1 -->
                      <div class="bgTarjeta">
@@ -216,11 +222,13 @@
                                 <div class="backFV"></div>
                             <p class="tituloF">FOTOGRAFIA Y VIDEO</p>
                             <div class="linea"></div>
-                            <p class="paqueteF">Paquete 1</p>
+                            <p class="paqueteF" style="font-weight: 500; font-style: normal;">Paquete 1</p>
                             <ul class="lista-tarjeta" role="list">
-                                <li>Access to all features</li>
-                                <li>Unlimited storage</li>
-                                <li>No ads</li>
+                              <li>100-150 Fotos digitales con enlace de descarga</li>
+                              <li>25 fotos impresas 4x6'</li>
+                              <li>1 Foto impresa 8x10'</li>
+                              <li>1 Foto en resina 11x14'</li>
+                              <li>Video entregado en línea o enlace de descarga</li>
                             </ul>
                             <div class="tarjeta-precio">$265.00</div>
                         </div>
@@ -266,11 +274,13 @@
                                 <div class="backFV"></div>
                             <p class="tituloF">FOTOGRAFIA Y VIDEO</p>
                             <div class="linea"></div>
-                            <p class="paqueteF">Paquete 2</p>
+                            <p class="paqueteF" style="font-weight: 500; font-style: normal;">Paquete 2</p>
                             <ul class="lista-tarjeta" role="list">
-                                <li>Access to all features</li>
-                                <li>Unlimited storage</li>
-                                <li>No ads</li>
+                              <li>150-200 Fotos digitales con enlace de descarga</li>
+                              <li>50 fotos impresas 4x6'</li>
+                              <li>2 Foto impresa 8x10'</li>
+                              <li>1 Foto en resina 11x14'</li>
+                              <li>Video entregado en línea o enlace de descarga</li>
                             </ul>
                             <div class="tarjeta-precio">$290.00</div>
                         </div>
@@ -316,11 +326,10 @@
                                 <div class="backVideo"></div>
                             <p class="tituloF">VIDEO</p>
                             <div class="linea"></div>
-                            <p class="paqueteF">Paquete 1</p>
+                            <p class="paqueteF" style="font-weight: 500; font-style: normal;">Paquete 1</p>
                             <ul class="lista-tarjeta" role="list">
-                                <li>Access to all features</li>
-                                <li>Unlimited storage</li>
-                                <li>No ads</li>
+                                <li>Video en USB y en formato digital con link de reproducción</li>
+                                <li>Cobertura en todo el evento</li>
                             </ul>
                             <div class="tarjeta-precio">$150.00</div>
                         </div>
@@ -361,8 +370,87 @@
 
 
                 <div class="grid-container">
+
+                    <!-- TARJETA PORTAFOLIO 1 -->
+                    <div class="cardPort">
+                      <img src="Images/452910612_1772328099958202_9057371772086643274_portf.webp" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
+                      <div class="cardPort__overlay">
+                        <div class="cardPort__header">
+                          <div class="cardPort__header-text">
+                            <h3 class="cardPort__titulo">Familia</h3>
+                          </div>
+                        </div>
+                        <a href="https://www.instagram.com/p/C93L8G6simS/">
+                          <p class="cardPort__enlaces" id="enlace">https://www.instagram.com/p/C93L8G6simS/</p>
+                        </a>
+                        <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                          <i class="bi bi-link-45deg"></i>
+                          <span class="tooltip">Copiado</span>
+                        </button>
+                      </div>
+                  </div>
+
+
+                    <!-- TARJETA PORTAFOLIO 2 -->
+                    <div class="cardPort">
+                      <img src="Images/453196893_481250767978251_3517827398081073273_porft.webp" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
+                      <div class="cardPort__overlay">
+                        <div class="cardPort__header">
+                          <div class="cardPort__header-text">
+                            <h3 class="cardPort__titulo">Anillos</h3>
+                          </div>
+                        </div>
+                        <a href="https://www.instagram.com/p/C98B1djhQGt/">
+                          <p class="cardPort__enlaces">https://www.instagram.com/p/C98B1djhQGt/</p>
+                        </a>
+                        <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                          <i class="bi bi-link-45deg"></i>
+                          <span class="tooltip">Copiado</span>
+                        </button>
+                      </div>
+                    </div>
                     
 
+
+                    <!-- TARJETA PORTAFOLIO 3 -->
+                    <div class="cardPort">
+                        <img src="https://i.imgur.com/oYiTqum.jpg" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;"/>
+                        <div class="cardPort__overlay">
+                          <div class="cardPort__header">
+                            <div class="cardPort__header-text">
+                              <h3 class="cardPort__titulo">Noches</h3>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <p class="cardPort__enlaces" id="enlace">https://ejemplo.com/enlace</p>
+                          </a>
+                          <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                            <i class="bi bi-link-45deg"></i>
+                            <span class="tooltip">Copiado</span>
+                          </button>
+                        </div>
+                    </div>
+
+
+                    <!-- TARJETA PORTAFOLIO 4 -->
+                    <div class="cardPort">
+                        <img src="https://i.imgur.com/oYiTqum.jpg" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;"/>
+                        <div class="cardPort__overlay">
+                          <div class="cardPort__header">
+                            <div class="cardPort__header-text">
+                              <h3 class="cardPort__titulo">Levi</h3>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <p class="cardPort__enlaces" id="enlace">https://ejemplo.com/enlace</p>
+                          </a>
+                          <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                            <i class="bi bi-link-45deg"></i>
+                            <span class="tooltip">Copiado</span>
+                          </button>
+                        </div>
+                    </div>
+                    
 
                 </div>
 
@@ -372,11 +460,12 @@
 
             <!-- SECTION CONTACTO -->
             <section class="section contacto" id="contacto">
-                <h3>Contacto</h3>
+              <h1 id="lbl_contacto" class="lbl_contacto">Contacto</h1>
 
                 
 
             </section>
+          
 
         </div>
         <div class="image-container">

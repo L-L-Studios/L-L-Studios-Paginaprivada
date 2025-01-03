@@ -1,15 +1,11 @@
-/*--------FUNCION PARA ALTERNAR EL BOTON TOGLE MENU--------*/
-// Seleccionar elementos
+
 const navbarToggler = document.getElementById('navbarToggler');
 const navbarLinks = document.getElementById('navbarLinks');
-
-// Alternar el menú al presionar el botón
 navbarToggler.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active'); // Activa o desactiva el menú
+  navbarLinks.classList.toggle('active');
 });
 
 
-/*---MODO CLARO Y MODO OSCURO CON SWITCH---*/
 console.clear();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,39 +13,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeSwitch = document.getElementById('themeSwitch');
   const themeImage = document.getElementById('themeImage');
 
-  // Alternar entre modo oscuro y claro
   themeSwitch.addEventListener('change', () => {
       const isDarkMode = themeSwitch.checked;
       body.classList.toggle('dark-mode', isDarkMode);
 
-      // Cambiar imagen según el tema
       themeImage.src = isDarkMode
-          ? "Images/fondo-negro-camara-rojo.jpg" // Imagen para tema oscuro
-          : "Images/fondo-blanco-camara.jpg"; // Imagen para tema claro
+          ? "Images/fondo-negro-camara-rojo.jpg" 
+          : "Images/fondo-blanco-camara.jpg"; 
   });
 });
 
-/*-------- SELECCIONAR CON UN CLICK AGRANDAR IMAGEN, DOBLE CLICK DEBE APARECER  */ 
-// Selecciona el contenedor de la imagen
+
 const wrapper = document.querySelector('.wrapper');
 
-// Agrega variables para controlar los clics
 let clickTimeout;
 
-// Evento de clic único para hacer zoom
 wrapper.addEventListener('click', function () {
-  // Usa un timeout para diferenciar entre clic y doble clic
   clickTimeout = setTimeout(() => {
     if (!this.classList.contains('zoomed')) {
-      this.classList.add('zoomed'); // Activa el zoom
+      this.classList.add('zoomed'); 
     }
-  }, 250); // Espera un breve momento para verificar si es doble clic
+  }, 250); 
 });
 
-// Evento de doble clic para deshacer el zoom
-wrapper.addEventListener('dblclick', function () {
-  clearTimeout(clickTimeout); // Cancela el timeout del clic único
-  if (this.classList.contains('zoomed')) {
-    this.classList.remove('zoomed'); // Desactiva el zoom
-  }
+
+const cards = document.querySelectorAll('.card');
+
+cards.forEach((card) => {
+  card.addEventListener('click', (event) => {
+    const isCircle = event.target.closest('.circle');
+    if (!isCircle) {
+      const circle = card.querySelector('.circle');
+      const icon = card.querySelector('.icon-img');
+      
+      circle.classList.toggle('moved');
+      icon.classList.toggle('rotate');
+    }
+  });
 });
+
+
+function copiarEnlace(boton) {
+  const enlace = boton.parentElement.querySelector(".cardPort__enlaces").textContent;
+
+  navigator.clipboard.writeText(enlace).then(() => {
+    boton.classList.add("show-tooltip");
+
+    setTimeout(() => {
+      boton.classList.remove("show-tooltip");
+    }, 2000);
+  }).catch(err => {
+    console.error("Error al copiar el enlace: ", err);
+  });
+}
+
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+/*document.addEventListener("keydown", function (e) {
+  if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+  }
+});*/

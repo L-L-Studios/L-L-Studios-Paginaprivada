@@ -1,3 +1,19 @@
+/*SCROLL-BAR*/
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #CB2D2D;
+  border-radius: 8px;
+}
+
+
 /*CONTENIDO - SECTIONS */
 .wrapper,
 .content {
@@ -50,15 +66,53 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
   color: #fff; /* Color del texto iluminado */
   z-index: 2; /* Asegura que el texto esté sobre la imagen */
-  font-size: 4rem; /* Ajusta el tamaño del texto según sea necesario */
 }
 
 /* Efecto de texto "Luz que se enciende y apaga" */
 .titulo-LLstudios {
+  font-family: "Poppins";
+  font-weight: 900;
+  font-style: normal;
   animation: lightEffect 4s infinite; /* Animación infinita */
   text-shadow: 0 0 5px #fff, 0 0 10px #CB2D2D, 0 0 20px #CB2D2D, 
                0 0 40px #CB2D2D, 0 0 80px #CB2D2D; /* Efecto de brillo */
+  position: absolute;
+  white-space: wrap; /* Evita el salto de línea */
+  cursor: pointer;
 }
+
+.titulo-container {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaciado entre texto y círculos */
+  z-index: 2;
+}
+
+/* Círculos */
+.circles {
+  animation: lightEffect 4s infinite; /* Animación infinita */
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 5px #fff, 0 0 10px #CB2D2D, 0 0 20px #CB2D2D, 
+  0 0 40px #CB2D2D, 0 0 80px #CB2D2D; /* Efecto de brillo */
+  transform: scale(0.5); /* Reducir el tamaño inicialmente */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animación suave */
+}
+
+.left-circles {
+  margin-right: 8em; /* Espaciado a la izquierda del título */
+}
+
+.right-circles {
+  margin-left: 8em; /* Espaciado a la derecha del título */
+}
+
 
 /* Animación para encender y apagar */
 @keyframes lightEffect {
@@ -72,7 +126,6 @@
                  0 0 80px #CB2D2D, 0 0 100px #CB2D2D; /* Brillo máximo */
   }
 }
-
 
 
 /*Imagen modo claro-oscuro */
@@ -109,3 +162,127 @@
   }
 }
 
+  /* PANTALLAS RESPONSIVAS */
+    /* Teléfonos pequeños (320px - 374px) */
+    @media (max-width: 374px) { 
+      .titulo-LLstudios{
+        font-size: 3.5rem;
+        justify-content: center;
+        text-wrap: pretty;
+      }
+
+      .left-circles {
+        margin-right: 8em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 8em; /* Espaciado a la derecha del título */
+      }
+
+
+    }
+
+    /* Teléfonos medianos (375px - 424px) */
+    @media (min-width: 375px) and (max-width: 424px) { 
+      .titulo-LLstudios{
+        font-size: 3.8rem;
+      }
+
+      .left-circles {
+        margin-right: 8.5em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 8.5em; /* Espaciado a la derecha del título */
+      }
+    }
+
+    /* Teléfonos grandes (425px - 767px) */
+    @media (min-width: 425px) and (max-width: 550px) { 
+      .titulo-LLstudios{
+        font-size: 4rem;
+      }
+
+      .left-circles {
+        margin-right: 9em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 9em; /* Espaciado a la derecha del título */
+      }
+    }
+
+    /* Mini tables (551px - 720px) */
+    @media (min-width: 551px) and (max-width: 729px) { 
+      .titulo-LLstudios{
+        font-size: 4.5rem;
+      }
+
+      .left-circles {
+        margin-right: 12em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 12em; /* Espaciado a la derecha del título */
+      }
+   
+    }
+
+    /* Tablets (730px - 1024px) */
+    @media (min-width: 730px) and (max-width: 1024px) { 
+      .titulo-LLstudios{
+        font-size: 5rem;
+        white-space: nowrap; /* Evita el salto de línea */
+      }
+
+      .left-circles {
+        margin-right: 17em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 17em; /* Espaciado a la derecha del título */
+      }
+    }
+
+    /* Laptops (1025px - 1920px) */
+    @media (min-width: 1025px) and (max-width: 1920px) { 
+      .titulo-LLstudios{
+        font-size: 5.5rem;
+        white-space: nowrap; /* Evita el salto de línea */
+      }
+
+      .circle {
+        width: calc(0.3 * 5.5rem);
+        height: calc(0.3 * 5.5rem);
+      }
+
+      .left-circles {
+        margin-right: 18em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 18em; /* Espaciado a la derecha del título */
+      }
+    }
+
+    /* Pantallas 4K (1921px y más) */
+    @media (min-width: 1921px) { 
+      .titulo-LLstudios{
+        font-size: 9rem;
+        flex-wrap: nowrap; /* Evita que los elementos salten de línea */
+      }
+
+      .circles {
+        width: calc(0.3 * 8rem);
+        height: calc(0.3 * 8rem);
+      }
+
+      .left-circles {
+        margin-right: 20em; /* Espaciado a la izquierda del título */
+      }
+      
+      .right-circles {
+        margin-left: 20em; /* Espaciado a la derecha del título */
+      }
+
+    }

@@ -1,10 +1,4 @@
     /*GRID TARJETAS GROUP*/
-    /* Contenedor principal de la cuadrícula */
-    .grid-container {
-        display: grid;
-        gap: 20px; /* Espaciado entre tarjetas */
-        padding: 20px;
-    }
 
     /* Margen a los títulos */
     #lbl_portafolio{
@@ -12,5 +6,166 @@
         font-size: 40px;
     }
 
+    :root{
+        --surface-color:  rgba(255, 255, 255, 0.7); /* Fondo translúcido */; 
+        --curve: 40;
+        --transition-speed: 0.2s;
+    }
 
+    .cardPort {
+      position: relative;
+      display: block;
+      margin: 10px 10px;
+      border-radius: calc(var(--curve) * 1px);
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 96%; /* Ajusta según tus necesidades */
+      height: 540px; /* Define la altura de las tarjetas */
+    }
 
+    /* Contenedor de la imagen */
+    .cardPort__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+      object-position: center; /* Centra la imagen dentro del contenedor */
+      transition: transform 0.3s ease; /* Suavidad del efecto zoom */
+    }
+    
+    /* Efecto de zoom solo en la imagen */
+    .cardPort:hover .cardPort__image {
+      transform: scale(1.1); /*Incrementa el tamaño de la imagen */
+    }
+    
+    .cardPort__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;      
+      border-radius: calc(var(--curve) * 1px);    
+      background-color: var(--surface-color);
+      transform: translateY(100%);
+      transition: .2s ease-in-out;
+    }
+    
+    /* Capa de blur separada */
+    .cardPort__overlay::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: blur(3px); /* Efecto de blur */
+      z-index: -1; /* Coloca el blur detrás */
+      border-radius: inherit; /* Coincide con el contenedor */
+    }
+    
+    .cardPort:hover .cardPort__overlay {
+      transform: translateY(0);
+    }
+    
+    .cardPort__header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      padding: 1.5em;
+      border-radius: calc(var(--curve) * 1px) 0 0 0;    
+      background-color: white;
+      transform: translateY(-100%);
+      transition: .2s ease-in-out;
+    }      
+    
+    .cardPort:hover .cardPort__header {
+      transform: translateY(0);
+    }
+    
+    .cardPort__titulo {
+      font-size: 1em;
+      margin: 0 0 .3em;
+      color: #CB2D2D;
+      font-weight: bold;
+    }
+    
+    .cardPort__enlaces {
+      padding: 0 1.5em 2em;
+      padding-top: 0.8rem;
+      margin: 0;
+      color: #6A515E;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      overflow: hidden;
+      font-size: 1em;
+      line-height: 1.4;
+      white-space: nowrap; /* Evita que el texto se desborde a múltiples líneas */
+      text-overflow: ellipsis;
+      display: block;
+    }    
+
+    .cardPort__copy {
+      margin-left: 1em;
+      margin-bottom: 1.5em;
+      background-color: #CB2D2D;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: block; /* Asegura que el contenido del botón esté centrado */
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition-speed);
+    }
+    
+    .cardPort__copy:hover {
+      background: #e4405f;
+    }
+
+    .tooltip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #252525;
+      color: white;
+      font-family: "Poppins";
+      font-size: 0.8em;
+      padding: 0.3em 0.6em;
+      border-radius: 4px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .cardPort__copy.show-tooltip .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+/* PANTALLAS RESPONSIVAS */
+  /* Teléfonos pequeños (320px - 374px) */
+  @media (max-width: 374px) { 
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+        padding: 8px;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+    }
+
+    /* Teléfonos medianos (375px - 424px) */
+    @media (min-width: 375px) and (max-width: 424px) { 
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+        padding: 8px;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+    }

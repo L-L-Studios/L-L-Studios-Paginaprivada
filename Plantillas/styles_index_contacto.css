@@ -1,0 +1,5 @@
+/* Margen a los títulos */
+#lbl_contacto{
+    margin: 20px 20px; /* Márgenes superior e inferior */
+    font-size: 40px;
+}

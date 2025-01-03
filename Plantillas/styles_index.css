@@ -8,9 +8,9 @@
     }
      /*Utilidades del root para con modo claro-oscuro */
     :root{
-      --background-light: #ffffff; /*Fondo claro white*/
+      --background-light: #e0e0e0; /*Fondo claro white*/
       --background-dark: #252525; /*Fondo oscuro*/
-      --background-blur-light: #ffffffb8; /*Fondo claro white con blur*/
+      --background-blur-light: #e0e0e0b8; /*Fondo claro white con blur*/
       --background-blur-dark: #252525b8; /*Fondo oscuro con blur*/
       --text-light: #414141;
       --text-dark: #ffffff;
@@ -25,6 +25,7 @@
       background-color: var(--background-light) no-repeat fixed 100% 100%; ;
       color: var(--text-light);
       background-size: cover;
+      overflow-x: hidden; /* Oculta el desplazamiento horizontal */
     }
     
     /*Modo oscuro para el cuerpo*/
@@ -53,7 +54,7 @@
       align-items: center;
       top: 0;
       z-index: 10;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
     /* Fondo con efecto blur */
@@ -161,6 +162,7 @@
     /* Enlaces del navbar */
     .navbar-links {
       display: flex; /* Visible por defecto en pantallas grandes */
+      
     }    
     
     /* Navbar Responsivo */
@@ -188,6 +190,7 @@
       .navbar-toggler {
         display: block; /* Visible en pantallas pequeñas */
         color: var(--text-light); /*Modo claro-letra oscura*/
+        margin-left: 20px;
       }
     
       body.dark-mode .navbar-toggler{
@@ -287,5 +290,3 @@
     .wrapper.zoomed .image-container img {
       transform: scale(6); /* Aumenta el zoom */
     }
-
-   
