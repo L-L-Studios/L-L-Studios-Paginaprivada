@@ -53,6 +53,8 @@
       justify-content: space-between;
       align-items: center;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 10;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
     }
@@ -102,6 +104,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      right: 0;
+      left: 0;
     }
     
     /*Navbar links-menu */
@@ -172,7 +176,7 @@
         display: none; /* Inicialmente oculto */
         flex-direction: column;
         position: absolute;
-        top: 69px;
+        top: 68px;
         right: 0;
         left: 0;
         border-radius: 0 0 5px 5px;
@@ -250,8 +254,7 @@
       top: 50%;
       transform: translateY(-50%);
       background: linear-gradient(40deg,#ff8c00,#CB2D2D 70%);
-      ;
-     transition: .4s;
+      transition: .4s;
     }
     
     input:checked + .slider {
@@ -289,4 +292,69 @@
     /* Efecto de zoom */
     .wrapper.zoomed .image-container img {
       transform: scale(6); /* Aumenta el zoom */
+    }
+
+    /*FOOTER*/
+    footer{
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #CB2D2D, #BA3C3C);
+      color: #e0e0e0;
+      display: grid;
+      place-content: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer::after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 68px;
+      background: rgb(0, 0, 0/10%);
+    }
+
+    .circleLogo{
+      width: 60px;
+      height: 60px;
+      /*background-color: white;*/
+      border-radius: 20px;
+      margin: 20px;
+     
+    }
+
+    .logoFooter{
+      width: 25px;
+      height: auto;
+      transform: translate(25%, 10%);
+      position: absolute;
+      filter: brightness(100);
+ 
+    }
+
+    .servicesList{
+      grid-area: services;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      justify-content: center;
+      margin: 20px 20px;
+    }
+
+    .servicesList  h2{
+      color: white;
+      list-style: none;
+    }
+
+    .servicesList ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
     }
