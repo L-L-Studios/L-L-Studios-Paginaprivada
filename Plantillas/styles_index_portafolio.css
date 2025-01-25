@@ -1,15 +1,29 @@
     /*GRID TARJETAS GROUP*/
 
+    :root{
+      --surface-color:  rgba(255, 255, 255, 0.7); /* Fondo translúcido */; 
+      --curve: 40;
+      --transition-speed: 0.2s;
+  }
+
     /* Margen a los títulos */
     #lbl_portafolio{
         margin: 20px 20px; /* Márgenes superior e inferior */
         font-size: 40px;
     }
 
-    :root{
-        --surface-color:  rgba(255, 255, 255, 0.7); /* Fondo translúcido */; 
-        --curve: 40;
-        --transition-speed: 0.2s;
+    /* Línea debajo de los títulos */
+    .lineaportafolio {
+      width: 16%; /* La línea comienza con un ancho de 0 */
+      height: 3px; /* Altura de la línea */
+      background-color: #e6683c;
+      transition: width 1s ease-in-out; /* Animación suave de la línea */
+      margin-top: 4px; /* Espacio entre el texto y la línea */
+    }
+
+    /* Animación al pasar el ratón */
+    #lbl_portafolio:hover + .lineaportafolio{
+      width: 100%; /* La línea se expande al 100% de ancho */
     }
 
     .cardPort {
@@ -20,8 +34,17 @@
       overflow: hidden;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 96%; /* Ajusta según tus necesidades */
-      height: 540px; /* Define la altura de las tarjetas */
+      width: 96%; 
+      height: 540px; 
+
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      opacity: 0;
+    }
+
+    .cardPort.visible{
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Contenedor de la imagen */

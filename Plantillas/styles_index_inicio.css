@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: #CB2D2D;
+  background-color: #eb4d03;
   border-radius: 8px;
 }
 
@@ -57,13 +57,49 @@
   height: auto;
 }
 
+.clickGif {
+  position: absolute; 
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 10; 
+  pointer-events: none; 
+  width: 60px; 
+  height: auto; 
+  animation: gifDesaparecer 4s ease-in forwards;
+  /*mix-blend-mode: multiply; Combina con el fondo subyacente */
+}
+
+@keyframes gifDesaparecer{
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 1; /* Totalmente visible */
+  }
+  100% {
+    opacity: 0; /* Se desvanece */
+  }
+}
+
+
+
 /*Titulo L&L Studios centrado*/
 .content-inicio .titulo-LLstudios {
   position: absolute;
   top: 50%; /* Centrado verticalmente */
   left: 50%; /* Centrado horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
+  text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702); /* Sombra para mejor visibilidad */
   color: #fff; /* Color del texto iluminado */
   z-index: 2; /* Asegura que el texto esté sobre la imagen */
 }
@@ -127,7 +163,6 @@
   }
 }
 
-
 /*Imagen modo claro-oscuro */
 .themeImage {
   width: 100%; /*ancho competo del contenedor*/
@@ -141,26 +176,15 @@
   height: 100%;
 }
 
-  /* RESPONSIVO IMAGEN - SECTIONS*/
-/* Asegura que el contenedor de imagen no se distorsione en dispositivos móviles */
-@media (max-width: 768px) {
-  .image-container {
-    height: 100vh; /* Mantener la altura completa en móvil */
-  }
+/*Animaciones*/
 
-  .image-container img {
-    object-position: center center; /* Mantener la imagen centrada */
-  }
-
-  /*imageTheme- asegura que la imagen no se distorsion en celulares*/
-  .themeImage{
-    height: 100vh;
-  }
-
-  .themeImage img {
-    object-position: center center; /* Mantener la imagen centrada */
-  }
+.scale-up-bottom{animation:scale-up-bottom 0.8s; } 
+@keyframes scale-up-bottom{
+  0%{transform:scale(.5);transform-origin:center bottom}
+  100%{transform:scale(1);transform-origin:center bottom}
 }
+
+  /* RESPONSIVO IMAGEN - SECTIONS*/
 
   /* PANTALLAS RESPONSIVAS */
     /* Teléfonos pequeños (320px - 374px) */
