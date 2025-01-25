@@ -1,5 +1,24 @@
-/* ----ANIMACION SCROLL----*/ 
+
+console.clear();
+
 document.addEventListener("DOMContentLoaded", () => {
+  /*---MODO CLARO Y MODO OSCURO CON SWITCH---*/
+  const body = document.getElementById('mainBody');
+  const themeSwitch = document.getElementById('themeSwitch');
+  const themeImage = document.getElementById('themeImage');
+
+   // Alternar entre modo oscuro y claro
+  themeSwitch.addEventListener('change', () => {
+    const isDarkMode = themeSwitch.checked;
+    body.classList.toggle('dark-mode', isDarkMode);
+
+    // Cambiar imagen según el tema
+    themeImage.src = isDarkMode
+        ? "Images/fondo-negro-camara-rojo.jpg" // Imagen para tema oscuro
+        : "Images/fondo-blanco-camara.jpg"; // Imagen para tema claro
+  });
+
+  /* ----ANIMACION SCROLL----*/ 
   const bgTarjetas = document.querySelectorAll(".bgTarjeta");
   const gradient_cards = document.querySelectorAll(".gradient_cards");
   const cardPort = document.querySelectorAll(".cardPort");
@@ -26,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 /*--------FUNCION PARA ALTERNAR EL BOTON TOGLE MENU--------*/
 // Seleccionar elementos
 const navbarToggler = document.getElementById('navbarToggler');
@@ -38,42 +56,44 @@ navbarToggler.addEventListener('click', () => {
 });
 
 
-/*---MODO CLARO Y MODO OSCURO CON SWITCH---*/
-console.clear();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const body = document.getElementById('mainBody');
-  const themeSwitch = document.getElementById('themeSwitch');
-  const themeImage = document.getElementById('themeImage');
-
-  // Alternar entre modo oscuro y claro
-  themeSwitch.addEventListener('change', () => {
-      const isDarkMode = themeSwitch.checked;
-      body.classList.toggle('dark-mode', isDarkMode);
-
-      // Cambiar imagen según el tema
-      themeImage.src = isDarkMode
-          ? "Images/fondo-negro-camara-rojo.jpg" // Imagen para tema oscuro
-          : "Images/fondo-blanco-camara.jpg"; // Imagen para tema claro
-  });
-});
-
 /*-------- SELECCIONAR CON UN CLICK AGRANDAR IMAGEN, DOBLE CLICK DEBE APARECER  */ 
 // Selecciona el contenedor de la imagen
-const wrapper = document.querySelector('.wrapper');
-
-// Agrega variables para controlar los clics
 let clickTimeout;
+const wrapper = document.querySelector('.wrapper');
+const tituloLLStudio = document.querySelector('.titulo-LLstudios');
 
-// Evento de clic único para hacer zoom
 wrapper.addEventListener('click', function () {
   // Usa un timeout para diferenciar entre clic y doble clic
+  clearTimeout(clickTimeout); // Asegura que no haya otros timeouts activos
   clickTimeout = setTimeout(() => {
     if (!this.classList.contains('zoomed')) {
-      this.classList.add('zoomed'); // Activa el zoom
+      this.classList.add('zoomed'); // Activa el zoom si no está ya activo
     }
-  }, 250); // Espera un breve momento para verificar si es doble clic
+  }, 250); // Espera 250ms para verificar si es doble clic
+
+  // Mostrar el título si está oculto
+  if (tituloLLStudio.classList.contains('hidden')) {
+    tituloLLStudio.classList.remove('hidden');
+    tituloLLStudio.style.visibility = 'visible';
+    tituloLLStudio.style.opacity = 1;
+  }
+
+  // Inicia la primera animación
+  tituloLLStudio.classList.add('tituloAparicion');
+
+  // Al terminar la primera animación, inicia la segunda
+  tituloLLStudio.addEventListener(
+    'animationend',
+    (event) => {
+      if (event.animationName === 'tituloAparicion') {
+        tituloLLStudio.classList.remove('tituloAparicion');
+        tituloLLStudio.classList.add('lightEffect');
+      }
+    },
+    { once: true } // Se ejecuta solo una vez
+  );
 });
+
 
 // Evento de doble clic para deshacer el zoom
 wrapper.addEventListener('dblclick', function () {
@@ -121,8 +141,6 @@ function copiarEnlace(boton) {
   });
 }
 
-
-
 document.querySelector('.cardCont').addEventListener('click', () => {
   const icon = document.querySelector('.icon');
   
@@ -134,8 +152,6 @@ document.querySelector('.cardCont').addEventListener('click', () => {
       icon.classList.remove('active');
   }, 5000);
 });
-
-
 
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();

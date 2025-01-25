@@ -99,8 +99,7 @@
   top: 50%; /* Centrado verticalmente */
   left: 50%; /* Centrado horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
-  text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702); /* Sombra para mejor visibilidad */
-  color: #fff; /* Color del texto iluminado */
+  /*color: #fff; /* Color del texto iluminado */
   z-index: 2; /* Asegura que el texto esté sobre la imagen */
 }
 
@@ -109,12 +108,55 @@
   font-family: "Poppins";
   font-weight: 900;
   font-style: normal;
-  animation: lightEffect 4s infinite; /* Animación infinita */
-  text-shadow: 0 0 5px #fff, 0 0 10px #CB2D2D, 0 0 20px #CB2D2D, 
-               0 0 40px #CB2D2D, 0 0 80px #CB2D2D; /* Efecto de brillo */
   position: absolute;
   white-space: wrap; /* Evita el salto de línea */
   cursor: pointer;
+  opacity: 0; 
+  visibility: hidden;
+  text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702);
+}
+
+.titulo-LLstudios.hidden{
+  visibility: hidden;
+}
+
+.titulo-LLstudios.visible{
+  visibility: visible;
+}
+
+.titulo-LLstudios.tituloAparicion{
+  animation: tituloAparicion 2.5s ease-in-out forwards;
+}
+
+.titulo-LLstudios.lightEffect{
+  color: #fff;
+  animation: lightEffect 4s ease-in-out infinite;
+}
+
+@keyframes tituloAparicion{
+  0%{
+    stroke-dashoffset: 50;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702);
+  }
+  100%{
+    color: #fff;
+    stroke-dashoffset: 0;
+    
+  }
+}
+
+/* Animación para encender y apagar */
+@keyframes lightEffect {
+  0%, 100% {
+    opacity: 0.3; /* Apagado (baja intensidad) */
+    text-shadow: 0 0 5px #333, 0 0 10px #333; /* Sombra débil */
+  }
+  50% {
+    opacity: 1; /* Encendido (alta intensidad) */
+    text-shadow: 0 0 10px #fff, 0 0 20px #CB2D2D, 0 0 40px #CB2D2D, 
+                 0 0 80px #CB2D2D, 0 0 100px #CB2D2D; /* Brillo máximo */
+  }
 }
 
 .titulo-container {
@@ -149,19 +191,6 @@
   margin-left: 8em; /* Espaciado a la derecha del título */
 }
 
-
-/* Animación para encender y apagar */
-@keyframes lightEffect {
-  0%, 100% {
-    opacity: 0.3; /* Apagado (baja intensidad) */
-    text-shadow: 0 0 5px #333, 0 0 10px #333; /* Sombra débil */
-  }
-  50% {
-    opacity: 1; /* Encendido (alta intensidad) */
-    text-shadow: 0 0 10px #fff, 0 0 20px #CB2D2D, 0 0 40px #CB2D2D, 
-                 0 0 80px #CB2D2D, 0 0 100px #CB2D2D; /* Brillo máximo */
-  }
-}
 
 /*Imagen modo claro-oscuro */
 .themeImage {

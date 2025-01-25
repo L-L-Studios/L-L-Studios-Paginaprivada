@@ -214,40 +214,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.semicirculo:nth-child(1):hover{
-  transform: translateY(8px);
-  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
-    10px 0 70px rgb(200, 79, 31);
-}
-
-.semicirculo:nth-child(2):hover{
-  transform: translateY(8px);
-  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
-    10px 0 50px rgb(200, 79, 31);
-}
-
-.semicirculo:nth-child(3):hover{
-  transform: translateY(8px);
-  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
-    10px 0 50px rgb(31, 104, 200);
-}
-
-.semicirculo:nth-child(4):hover{
-  transform: translateY(8px);
-  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
-    10px 0 50px rgb(31, 104, 200);
-}
-
-.semicirculo:hover {
-  transform: translateY(8px);
-  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
-    10px 0 50px rgb(85, 31, 200);
-}
-
-.semicirculo:hover ~ .back {
-  transform: translateY(8px); /* Ajuste al fondo durante hover */
-}
-
 /* Lista */
 .lista-tarjeta {
   list-style: circle;
@@ -271,7 +237,7 @@
   padding: 16px 24px 16px 28px;
   font-size: 1.5em;
   font-weight: bold;
-  cursor: pointer;
+  cursor: default;
   transition: background-color 0.3s ease;
 }
 
