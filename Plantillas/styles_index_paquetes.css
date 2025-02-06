@@ -180,7 +180,7 @@
   width: 60px;
   height: 60px;
   z-index: 0;
-  border-radius: 40%; /* Forma circular */
+  border-radius: 35%; /* Forma circular */
   box-shadow: -5px 0 10px #FCC737, 5px 0 10px #F26B0F;
   transform: translateY(10px);
   transition: transform 0.2s ease-in-out;
@@ -194,7 +194,7 @@
   width: 60px;
   height: 60px;
   z-index: 0;
-  border-radius: 30%; /* Forma circular */
+  border-radius: 35%; /* Forma circular */
   box-shadow: -5px 0 10px #eb4d03, 5px 0 10px #fa7436;
   transform: translateY(10px);
   transition: transform 0.2s ease-in-out;
@@ -208,7 +208,7 @@
   width: 60px;
   height: 60px;
   z-index: 0;
-  border-radius: 30%; /* Forma circular */
+  border-radius: 35%; /* Forma circular */
   box-shadow: -5px 0 10px #FFE100, 5px 0 10px #eb4d03;
   transform: translateY(10px);
   transition: transform 0.2s ease-in-out;

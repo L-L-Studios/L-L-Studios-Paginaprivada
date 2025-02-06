@@ -125,7 +125,7 @@
 }
 
 .titulo-LLstudios.tituloAparicion{
-  animation: tituloAparicion 2.5s ease-in-out forwards;
+  animation: tituloAparicion 2.5s ease-in forwards;
 }
 
 .titulo-LLstudios.lightEffect{
@@ -135,12 +135,14 @@
 
 @keyframes tituloAparicion{
   0%{
-    stroke-dashoffset: 50;
-    color: transparent;
+    stroke-dashoffset: 529;
+    color: #fff;
+    opacity: 0.2;
     text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702);
   }
   100%{
     color: #fff;
+    opacity: 0.5; 
     stroke-dashoffset: 0;
     
   }
