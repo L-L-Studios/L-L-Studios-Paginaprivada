@@ -13,7 +13,6 @@
   border-radius: 8px;
 }
 
-
 /*CONTENIDO - SECTIONS */
 .wrapper,
 .content {
@@ -99,7 +98,6 @@
   top: 50%; /* Centrado verticalmente */
   left: 50%; /* Centrado horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
-  /*color: #fff; /* Color del texto iluminado */
   z-index: 2; /* Asegura que el texto esté sobre la imagen */
 }
 

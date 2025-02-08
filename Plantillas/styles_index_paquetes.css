@@ -14,7 +14,7 @@
     background: linear-gradient(145deg, #212121, #282828);
   }*/
 
-  
+  /*
   .gradient-1 {
     width: 180px;
     height: 160px;
@@ -24,10 +24,11 @@
     top: 34%;
     left: 10%;
     transform: translate(-50%, -50%);
-    animation: gradientMove 6s ease-in-out infinite; /* Animación para el movimiento */
+    animation: gradientMove 6s ease-in-out infinite; Animación para el movimiento 
     filter: blur(100px);
     z-index: -1;
   }
+  */
 
   /* Margen a los títulos */
   #lbl_paquetes {

@@ -22,170 +22,208 @@
   width: 100%; /* La línea se expande al 100% de ancho */
 }
 
-.cardCont {
+/* Estilos tarjeta whatsapp ------------------------------- */
+.cardWhats {
   position: relative;
-  display: block;
-  overflow: hidden;
-  text-decoration: none;
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1/1; /* Hace que la tarjeta sea cuadrada */
+  height: 350px;
+  perspective: 1000px;
+  border-radius: 16px;
+}
+
+.innerCardWhats {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
   border-radius: 16px;
   background: linear-gradient(145deg, #ffffff, #f0f0f0);
   box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 7px, 
-              rgba(0, 0, 0, 0.7) 0px 7px 16px -3px, 
-              rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
-  border: none;
-  transition: transform 0.3s ease-in-out, box-shadow 0.5s;
+  rgba(0, 0, 0, 0.7) 0px 7px 16px -3px, 
+  rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
 }
 
-.cardCont:hover {
-  aspect-ratio: 1/1;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+.cardWhats:hover .innerCardWhats {
+  transform: rotateY(180deg);
 }
 
-.innerCard {
+.frontWhats, .backWhats {
   width: 100%;
-  height: auto;
-  position: relative;
-  transform-style: preserve-3d; /* Permite que los hijos se comporten en 3D */
-  transition: transform 0.8s ease-in-out; /* Transición suave al girar */
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 16px;
 }
 
-.cardCont:hover .innerCard {
-  transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+.frontWhats {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
 }
 
-/* Íconos de redes sociales */
-.letraWhats, .letraInst {
-  width: 25%;
+.frontWhatsContent {
+  background-color: #00bb2c;
+  width: 90%;
+  height: 80%;
+  backface-visibility: hidden;
+  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.backWhatsContent {
+  background-color: #00bb2c;
+  width: 90%;
+  height: 80%;
+  backface-visibility: hidden;
+  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.backWhats {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.imgWhats {
+  width: 40px;
+  height: 40px;
+  margin: 5px 10px 0 10px; /*Top-right-bottom-left*/
+  justify-content: space-between;
+  display: flex; 
+}
+
+.letraWhats {
+  width: 80px;
   height: auto;
   margin-left: 10%;
-  margin-top: 8%;
-  transition: transform 0.3s ease-in-out;
+  margin-top: 0;
 }
 
-.letraWhats:hover, .letraInst:hover {
-  transform: scale(1.1);
-}
-
-.backContent {
-  position: absolute;
-  width: auto;
-  height: 48vh;
-  border-radius: 16px;
-  padding: 4px;
-  padding-bottom: 60px;
+.dotsfront, .dotsback {
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Evita que la imagen sobresalga */
+  margin: 0 20px 0 20px; /*Top-right-bottom-left*/
+  font-size: 14px;
+  color: #333;
 }
 
-.backContent img {
-  width: calc(100% - 20px);  /* Se ajusta al tamaño del contenedor con margen */
-  height: calc(100% - 20px); /* Se ajusta al tamaño del contenedor con margen */
-  object-fit: cover; 
+.contentBox {
+  width: 80%;
+  padding: 10px;
+  background-color: #252525;
   border-radius: 8px;
+  bottom: 10%;
+  position: absolute;
+  justify-self: bottom;
+  margin: 5px 5% 10% 5%; /*Top-right-bottom-left*/
 }
 
-
-/* Estilos para la cara trasera */
-.backContent, .frontContent, .frontContentWhats {
-    position: absolute;
-    backface-visibility: hidden; /* Oculta la cara trasera cuando no está visible */
-    border-radius: 16px;
-    
-}
-/* La cara frontal debe estar girada 180 grados inicialmente */
-/* Instagram*/
-.frontContent {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.frontContent img{
-  width: 150px;
-  height: auto;
-  transform: translate(0%, 5%);
-  margin: 10px;
-  margin-bottom: 30px;
-}
-
-/* Whatsapp*/
-.frontContentWhats {
-  background: #00bb2d;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.frontContentWhats img{
-  width: 150px;
-  height: auto;
-  transform: translate(0%, 5%);
-  margin: 10px;
-  margin-bottom: 30px;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-.dot {
-  width: 5px;
-  height: 5px;
-  margin: 0 5px;
-  background-color: #eee;
-  border-radius: 50%;
-  display: inline-block;
-}
-.frontContent, .frontContentWhats p {
-  font-size: 1.4rem;
-  color: #eee;
-  line-height: 1.5;
+.contentBox p{
   text-align: center;
   margin-top: 10px;
-  padding-bottom: 5px;
-  transition: opacity 0.3s ease-in-out;
+  font-weight: bold;
+  color: white;
+}
+
+.userTag {
+  position: absolute;
+  justify-content: center;
+  justify-self: center;
+  font-weight: bold;
+  color: #252525;
+  margin-top: 10px;
+  margin: 5px 28% 10% 28%; /*Top-right-bottom-left*/
+  
+}
+
+/* Estilos tarjeta Instagram ------------------------------- */
+.cardInst {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+  border-radius: 16px;
+}
+
+.innerCardInst {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 7px, 
+  rgba(0, 0, 0, 0.7) 0px 7px 16px -3px, 
+  rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+}
+
+.cardInst:hover .innerCardInst {
+  transform: rotateY(180deg);
+}
+
+.frontInst, .backInst {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.frontInst {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+}
+
+.frontInstContent {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  width: 90%;
+  height: 80%;
+  backface-visibility: hidden;
+  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.backInstContent {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  width: 90%;
+  height: 80%;
+  backface-visibility: hidden;
+  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.backInst {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.imgInst {
+  width: 40px;
+  height: 40px;
+  margin: 5px 10px 0 10px; /*Top-right-bottom-left*/
+  justify-content: space-between;
+  display: flex; 
+}
+
+.letraInst {
+  width: 80px;
+  height: auto;
+  margin-left: 10%;
+  margin-top: 0;
 }
 
 
-.imgFrontLogo{
-    justify-content: center;
-    width: 50%;
-    height: auto;
-    transform: translate(50%,0%);
 
-}
-
-.imgPerfilInst, .imgPerfilWhats{
-    width: 100%;
-    height: auto;
-    border-radius: 8px; 
-}
-
-
-
-/*Logo de instagram con animacion*/
+/*Logo de instagram con animacion---------------------------------------*/
 .iconInst{
     display: block;
     width: 5%;
     height: 5%;
-    margin-left: 37%;
-    margin-right: 50%;
-    transform: translate(50%, 80%);
+    margin: 5px 40% 0 40%; /*Top-right-bottom-left*/
+    transform: translate(50%, 70%);
 }
 
 .icon {
@@ -235,7 +273,7 @@
     transition: bottom 0.3s ease, opacity 0.3s ease;
   }
   .icon:hover .text {
-    bottom: -35px;
+    bottom: -20px; /*Texto instagram*/
     opacity: 1;
   }
   
