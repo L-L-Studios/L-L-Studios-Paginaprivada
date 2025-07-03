@@ -142,6 +142,12 @@
       color: #CB2D2D; /* Opcional: cambia el color del texto al pasar el cursor */
     }
     
+    /* Mostrar línea fija para el enlace activo */
+    .navbar-links a.active::after {
+      width: 100%;
+    }
+
+
     body.dark-mode .navbar a {
       color: var(--text-dark);
       text-decoration: none;

@@ -55,6 +55,16 @@ navbarToggler.addEventListener('click', () => {
   navbarLinks.classList.toggle('active'); // Activa o desactiva el menú
 });
 
+/*-------- ACTIVAR LINEA DECORATIVA DE LA NAVBAR--------*/
+  const links = document.querySelectorAll('.navbar-links a');
+
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      links.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
 
 /*-------- SELECCIONAR CON UN CLICK AGRANDAR IMAGEN, DOBLE CLICK DEBE APARECER  */ 
 // Selecciona el contenedor de la imagen
