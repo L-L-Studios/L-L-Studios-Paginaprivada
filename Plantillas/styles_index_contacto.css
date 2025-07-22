@@ -22,108 +22,116 @@
   width: 100%; /* La línea se expande al 100% de ancho */
 }
 
-/* Estilos tarjeta whatsapp ------------------------------- */
-.cardWhats {
+/*ESTILO TARJETA WHATSAPP*/
+.cardWhatsapp-cont{
   position: relative;
   width: 100%;
-  height: 350px;
-  perspective: 1000px;
-  border-radius: 16px;
+  min-width: 60%;
+  max-width: 400px;
+  height: 100%;
+  display: flex;
+  scale: 0.95;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans';
+  transition: all 0.3s ease-in-out;
+  perspective: 1500px;
+  top: -25px;
 }
 
-.innerCardWhats {
-  width: 100%;
-  height: 100%;
+
+
+.card-whats {
   position: relative;
+  width: 360px;
+  height: 300px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 48px;
+  border: 2px solid #434443;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 7px, 
-  rgba(0, 0, 0, 0.7) 0px 7px 16px -3px, 
-  rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
-.cardWhats:hover .innerCardWhats {
-  transform: rotateY(180deg);
-}
 
-.frontWhats, .backWhats {
+.main-cont-what {
   width: 100%;
   height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 16px;
-}
-
-.frontWhats {
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-}
-
-.frontWhatsContent {
-  background-color: #00bb2c;
-  width: 90%;
-  height: 80%;
-  backface-visibility: hidden;
-  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.backWhatsContent {
-  background-color: #00bb2c;
-  width: 90%;
-  height: 80%;
-  backface-visibility: hidden;
-  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.backWhats {
-  background-color: #ffffff;
-  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* alineado a la izquierda */
+  justify-content: flex-start;
+  position: relative;
+  padding: 10px 20px;
+  gap: 10px;
 }
 
 .imgWhats {
   width: 40px;
   height: 40px;
-  margin: 5px 10px 0 10px; /*Top-right-bottom-left*/
+  margin: 0 5px; /*Top-right-bottom-left*/
   justify-content: space-between;
   display: flex; 
 }
 
 .letraWhats {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
   width: 80px;
-  height: auto;
-  margin-left: 10%;
-  margin-top: 0;
+   margin-left: 10%;
 }
 
-.dotsfront, .dotsback {
-  display: flex;
-  justify-content: center;
-  margin: 0 20px 0 20px; /*Top-right-bottom-left*/
-  font-size: 14px;
-  color: #333;
-}
 
-.contentBox {
-  width: 80%;
-  padding: 10px;
-  background-color: #252525;
-  border-radius: 8px;
-  bottom: 10%;
+/* GLOW GENERAL */
+.glow {
   position: absolute;
-  justify-self: bottom;
-  margin: 5px 5% 10% 5%; /*Top-right-bottom-left*/
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.6;
+  z-index: 0;
 }
 
-.contentBox p{
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
-  color: white;
+.glow1 {
+  top: -40px;
+  right: -40px;
+  background: radial-gradient(circle, #00ff62, transparent 70%);
+}
+
+.glow2 {
+  bottom: -40px;
+  left: -40px;
+  background: radial-gradient(circle, #f6f4bb, transparent 70%);
+}
+
+.back-whats {
+  position: absolute;
+  bottom: 140px;
+  min-width: 60%;
+  max-width: 100%;
+  height: 100px;
+  background-color: #00bb2c;
+  border-radius: 30px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+
+.cardWhatsapp-cont:hover .back-whats {
+  transform: translateY(180px);
 }
 
 .userTag {
@@ -131,11 +139,54 @@
   justify-content: center;
   justify-self: center;
   font-weight: bold;
+  font-size: 18px;
   color: #252525;
-  margin-top: 10px;
-  margin: 5px 28% 10% 28%; /*Top-right-bottom-left*/
+  margin-top: 16px;
+}
+
+.cont2-whats {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.cuadroverde {
+  width: 100%;
+  height: 200px;
+  background-color: #00bb2c;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.contentBox {
+  width: 80%;
+  padding: 10px;
+  background-color: #252525;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -160px;
   
 }
+
+.contentBox p{
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+
+
+
+
+
 
 /* Estilos tarjeta Instagram ------------------------------- */
 .cardInst {
@@ -215,126 +266,5 @@
   margin-top: 0;
 }
 
-
-
-/*Logo de instagram con animacion---------------------------------------*/
-.iconInst{
-    display: block;
-    width: 5%;
-    height: 5%;
-    margin: 5px 40% 0 40%; /*Top-right-bottom-left*/
-    transform: translate(50%, 70%);
-}
-
-.icon {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    position: relative;
-  }
-
-  .layer {
-    width: 55px;
-    height: 55px;
-    transition: transform 0.3s;
-  }
-  .icon:hover .layer{
-    transform: rotate(-35deg) skew(20deg);
-  }
-
-  .layer span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: inherit;
-    width: inherit;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    transition: all 0.3s;
-  }
-
-  .layer span,
-.text {
-  color: #e6683c;
-  border-color: #e6683c;
-}
-
-.icon:hover.layer span {
-  box-shadow: -1px 1px 3px #e6683c;
-}
-
-.icon .text {
-    position: absolute;
-    left: 30px;
-    bottom: -5px;
-    opacity: 0;
-    font-weight: 500;
-    transform: translateX(-50%);
-    transition: bottom 0.3s ease, opacity 0.3s ease;
-  }
-  .icon:hover .text {
-    bottom: -20px; /*Texto instagram*/
-    opacity: 1;
-  }
-  
-  .icon:hover .layer span:nth-child(1) {
-    opacity: 0.2;
-  }
-  .icon:hover .layer span:nth-child(2) {
-    opacity: 0.4;
-    transform: translate(5px, -5px);
-  }
-  .icon:hover .layer span:nth-child(3) {
-    opacity: 0.6;
-    transform: translate(10px, -10px);
-  }
-  .icon:hover .layer span:nth-child(4) {
-    opacity: 0.8;
-    transform: translate(15px, -15px);
-  }
-  .icon:hover .layer span:nth-child(5) {
-    opacity: 1;
-    transform: translate(20px, -20px);
-  }
-  
-  .instagramSVG {
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: -webkit-linear-gradient(
-      45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%
-    );
-    background: linear-gradient(
-      45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  }
-  .user {
-    display: flex;
-    gap: 10px;
-  }
-  .img {
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    font-weight: 700;
-    border: 1px solid #e6683c;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-  }
 
 
