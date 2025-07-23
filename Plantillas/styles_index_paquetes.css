@@ -10,26 +10,6 @@
 
   }
 
-  /*.paquetes{
-    background: linear-gradient(145deg, #212121, #282828);
-  }*/
-
-  /*
-  .gradient-1 {
-    width: 180px;
-    height: 160px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(255, 105, 105, 0.7), rgba(250, 135, 160, 0.7));
-    position: absolute;
-    top: 34%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    animation: gradientMove 6s ease-in-out infinite; Animación para el movimiento 
-    filter: blur(100px);
-    z-index: -1;
-  }
-  */
-
   /* Margen a los títulos */
   #lbl_paquetes {
     margin: 20px 20px; /* Márgenes superior e inferior */
@@ -116,6 +96,7 @@
   text-align: left;
   color: #eceff1;
   text-wrap: balance;
+  word-break: break-word; /* Permite que el texto se divida en varias líneas si es necesario */
 }
 
   /* Línea roja */

@@ -26,7 +26,7 @@
 .cardWhatsapp-cont{
   position: relative;
   width: 100%;
-  min-width: 60%;
+  min-width: 270px;
   max-width: 400px;
   height: 100%;
   display: flex;
@@ -39,12 +39,10 @@
   top: -25px;
 }
 
-
-
 .card-whats {
   position: relative;
-  width: 360px;
-  height: 300px;
+  width: 380px;
+  height: 320px;
   background: linear-gradient(145deg, #ffffff, #f0f0f0);
   border-radius: 48px;
   border: 2px solid #434443;
@@ -88,7 +86,6 @@
    margin-left: 10%;
 }
 
-
 /* GLOW GENERAL */
 .glow {
   position: absolute;
@@ -115,7 +112,7 @@
 
 .back-whats {
   position: absolute;
-  bottom: 140px;
+  bottom: 110px;
   min-width: 60%;
   max-width: 100%;
   height: 100px;
@@ -142,6 +139,7 @@
   font-size: 18px;
   color: #252525;
   margin-top: 16px;
+  text-decoration: none;
 }
 
 .cont2-whats {
@@ -182,89 +180,164 @@
   color: white;
 }
 
-
-
-
-
-
-
-/* Estilos tarjeta Instagram ------------------------------- */
-.cardInst {
+/* ----                                      ----*/
+/*ESTILO TARJETA INSTAGRAM*/
+.cardInstagram-cont{
   position: relative;
   width: 100%;
-  height: 350px;
-  perspective: 1000px;
-  border-radius: 16px;
+  min-width: 270px;
+  max-width: 400px;
+  height: 100%;
+  display: flex;
+  scale: 0.95;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans';
+  transition: all 0.3s ease-in-out;
+  perspective: 1500px;
+  top: -25px;
 }
 
-.innerCardInst {
-  width: 100%;
-  height: 100%;
+.card-inst {
   position: relative;
+  width: 380px;
+  height: 320px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 48px;
+  border: 2px solid #434443;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 7px, 
-  rgba(0, 0, 0, 0.7) 0px 7px 16px -3px, 
-  rgba(0, 0, 0, 0.2) 0px -5px 0px inset;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
-.cardInst:hover .innerCardInst {
-  transform: rotateY(180deg);
-}
 
-.frontInst, .backInst {
+.main-cont-inst {
   width: 100%;
   height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 16px;
-}
-
-.frontInst {
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-}
-
-.frontInstContent {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  width: 90%;
-  height: 80%;
-  backface-visibility: hidden;
-  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.backInstContent {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  width: 90%;
-  height: 80%;
-  backface-visibility: hidden;
-  margin: 2px 5% 1px 5%; /*Top-right-bottom-left*/
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.backInst {
-  background-color: #ffffff;
-  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* alineado a la izquierda */
+  justify-content: flex-start;
+  position: relative;
+  padding: 10px 20px;
+  gap: 10px;
 }
 
 .imgInst {
   width: 40px;
   height: 40px;
-  margin: 5px 10px 0 10px; /*Top-right-bottom-left*/
+  margin: 0 5px; /*Top-right-bottom-left*/
   justify-content: space-between;
   display: flex; 
 }
 
 .letraInst {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
   width: 80px;
-  height: auto;
-  margin-left: 10%;
-  margin-top: 0;
+   margin-left: 10%;
 }
 
+/* GLOW GENERAL */
+.glow_ {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.6;
+  z-index: 0;
+}
 
+.glow1_ {
+  top: -40px;
+  right: -40px;
+  background: radial-gradient(circle, #dc2743, #cc2366, transparent 70%);
+}
+
+.glow2_ {
+  bottom: -40px;
+  left: -40px;
+  background: radial-gradient(circle, #f09433, transparent 70%);
+}
+
+.back-inst {
+  position: absolute;
+  bottom: 110px;
+  min-width: 60%;
+  max-width: 100%;
+  height: 100px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-radius: 30px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.cardInstagram-cont:hover .back-inst {
+  transform: translateY(180px);
+}
+
+.cont2-inst {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.cuadroinst {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.contentBox_ {
+  width: 80%;
+  padding: 10px;
+  background-color: #252525;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -160px;
+  
+}
+
+.contentBox_ p{
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+  .cardWhatsapp-cont, .cardInstagram-cont{
+    margin-bottom: 60px;
+  }
+
+  .back-whats, .back-inst {
+    bottom: 140px; /* Ajusta la posición de la tarjeta hacia arriba */
+  }
+
+
+  
+}
 
