@@ -1,3 +1,7 @@
+/**{
+  outline: 1px solid yellow; para depuración
+}/*
+
 /*SCROLL-BAR*/
 ::-webkit-scrollbar{
   width: 12px;
@@ -27,7 +31,7 @@
 }
 
 .section {
-  scroll-margin-top: 90px; /* Espacio de margen del scroll con respecto al header */
+  scroll-margin-top: 80px; /* Espacio de margen del scroll con respecto al header */
 }
 
 /*Contenido inicio para centar texto dentro de img*/
@@ -36,6 +40,7 @@
   width: 100%; 
   height: auto;
   overflow: hidden;
+  top: -50px;
 }
 
 .content-paquetes{
@@ -105,11 +110,8 @@
 .titulo-LLstudios {
   font-family: "Poppins";
   font-weight: 900;
-  font-style: normal;
-  position: absolute;
-  white-space: wrap; /* Evita el salto de línea */
-  cursor: pointer;
-  opacity: 0; 
+  font-size: 5rem;
+  opacity: 0;
   visibility: hidden;
   text-shadow: 2px 2px 4px rgba(31, 9, 9, 0.702);
 }
@@ -159,37 +161,86 @@
   }
 }
 
-.titulo-container {
+.bloque-central {
   position: absolute;
-  top: 50%; /* Centrado verticalmente */
-  left: 50%; /* Centrado horizontalmente */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column; /* Columna para que título esté arriba y descripción abajo */
   align-items: center;
-  gap: 10px; /* Espaciado entre texto y círculos */
+  justify-content: center;
+  gap: 60px; /* Espacio entre título y descripción */
   z-index: 2;
 }
 
-/* Círculos */
-.circles {
-  animation: lightEffect 4s infinite; /* Animación infinita */
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+/* Contenedor del título con círculos */
+.titulo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaciado entre texto y círculos */
+}
+
+.descripcion_corta {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #000;
+  margin: 0;
+}
+
+.descripcion_corta.hidden{
+  visibility: hidden;
+}
+
+.descripcion_corta.visible{
+  visibility: visible;
+}
+
+.descripcion_corta.tituloAparicion{
+  animation: tituloAparicion 2.5s ease-in forwards;
+}
+
+
+.info-categorias {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
   background: white;
-  box-shadow: 0 0 5px #fff, 0 0 10px #CB2D2D, 0 0 20px #CB2D2D, 
-  0 0 40px #CB2D2D, 0 0 80px #CB2D2D; /* Efecto de brillo */
-  transform: scale(0.5); /* Reducir el tamaño inicialmente */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Animación suave */
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.left-circles {
-  margin-right: 8em; /* Espaciado a la izquierda del título */
+.info-categorias .categoria {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+  margin: 0 10px;
 }
 
-.right-circles {
-  margin-left: 8em; /* Espaciado a la derecha del título */
+.info-categorias .categoria i {
+  font-size: 1.2rem;
+  color: #CB2D2D;
 }
+
+#cat_camera, #cat_video, #cat_otros {
+  mix-blend-mode: multiply; 
+  background-color: transparent;
+  height: 50px;
+}
+
 
 
 /*Imagen modo claro-oscuro */
@@ -218,18 +269,18 @@
   /* PANTALLAS RESPONSIVAS */
     /* Teléfonos pequeños (320px - 374px) */
     @media (max-width: 374px) { 
-      .titulo-LLstudios{
-        font-size: 3.5rem;
-        justify-content: center;
-        text-wrap: pretty;
+
+.titulo-LLstudios { font-size: 3rem; }
+
+      .info-categorias{
+        display: flex;
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        width: 50%;
       }
 
-      .left-circles {
-        margin-right: 8em; /* Espaciado a la izquierda del título */
-      }
-      
-      .right-circles {
-        margin-left: 8em; /* Espaciado a la derecha del título */
+      #cat_camera, #cat_video, #cat_otros {
+        height: 25px;
       }
 
 
@@ -237,31 +288,35 @@
 
     /* Teléfonos medianos (375px - 424px) */
     @media (min-width: 375px) and (max-width: 424px) { 
-      .titulo-LLstudios{
-        font-size: 3.8rem;
+
+.titulo-LLstudios { font-size: 3rem; }
+      .info-categorias{
+        display: flex;
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        width: 50%;
       }
 
-      .left-circles {
-        margin-right: 8.5em; /* Espaciado a la izquierda del título */
-      }
-      
-      .right-circles {
-        margin-left: 8.5em; /* Espaciado a la derecha del título */
+      #cat_camera, #cat_video, #cat_otros {
+        height: 40px;
       }
     }
 
     /* Teléfonos grandes (425px - 767px) */
     @media (min-width: 425px) and (max-width: 550px) { 
-      .titulo-LLstudios{
-        font-size: 4rem;
+    .titulo-LLstudios { font-size: 3.5rem; }
+    .descripcion_corta { font-size: 1rem; }
+    .titulo-descripcion-container { gap: 15px; }
+
+      .info-categorias{
+        display: flex;
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        width: 40%;
       }
 
-      .left-circles {
-        margin-right: 9em; /* Espaciado a la izquierda del título */
-      }
-      
-      .right-circles {
-        margin-left: 9em; /* Espaciado a la derecha del título */
+      #cat_camera, #cat_video, #cat_otros {
+        height: 30px;
       }
     }
 
@@ -277,6 +332,10 @@
       
       .right-circles {
         margin-left: 12em; /* Espaciado a la derecha del título */
+      }
+
+      #cat_camera, #cat_video, #cat_otros {
+        height: 30px;
       }
    
     }

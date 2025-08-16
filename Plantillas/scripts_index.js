@@ -81,6 +81,7 @@ wrapper.addEventListener('click', function () {
     }
   }, 250); // Espera 250ms para verificar si es doble clic
 
+  /**--------------------Titulo------------------------------- */
   // Mostrar el título si está oculto
   if (tituloLLStudio.classList.contains('hidden')) {
     tituloLLStudio.classList.remove('hidden');
@@ -102,7 +103,21 @@ wrapper.addEventListener('click', function () {
     },
     { once: true } // Se ejecuta solo una vez
   );
+
+  /** /---------------------Descripcion---------------------------*/
+  const titulo = document.querySelector('.titulo-LLstudios');
+  const descripcion = document.querySelector('.descripcion_corta');
+
+  // Aparece el título
+  titulo.classList.add('tituloAparicion', 'visible');
+
+  // Aparece la descripción después de 0.5s
+  setTimeout(() => {
+    descripcion.classList.add('tituloAparicion', 'visible');
+  }, 500);
+
 });
+
 
 
 // Evento de doble clic para deshacer el zoom

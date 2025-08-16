@@ -47,6 +47,12 @@
       transform: translateY(0);
     }
 
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
     /* Contenedor de la imagen */
     .cardPort__image {
       width: 100%;
@@ -59,6 +65,28 @@
     /* Efecto de zoom solo en la imagen */
     .cardPort:hover .cardPort__image {
       transform: scale(1.1); /*Incrementa el tamaño de la imagen */
+    }
+
+    .cardPort__image-ll {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cardPort__image-llw {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: auto; /* esta imagen atrapa clics y descargas */
+      opacity: 0; 
+    }
+
+    .cardPort__image-llw.visible {
+      opacity: 1; 
     }
     
     .cardPort__overlay {

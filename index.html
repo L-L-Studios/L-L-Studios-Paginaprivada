@@ -56,16 +56,39 @@
             <!-- SECTION INICIO -->
             <section class="section inicio" id="inicio">
                 <div class="content-inicio">
-                  <div class="titulo-container">
-                    <div class="circles left-circles"></div>
-                    <p class="titulo-LLstudios hidden">L&L STUDIOS</p>
-                    <div class="circles right-circles"></div>
-                  </div>
 
+                    <div class="bloque-central">
+                      <!-- Contenedor del título con círculos -->
+                      <div class="titulo-con-circulos">
+                      <!--  <div class="circles"></div>-->
+                        <h1 class="titulo-LLstudios">L&L STUDIOS</h1>
+                        <!--<div class="circles"></div>-->
+                      </div>
+
+                  </div>
+                   
                     <div class="background-switch">
                         <!-- Imagen que cambia según el tema -->
                         <img id="themeImage" class="themeImage" src="Images/fondo-blanco-camara.jpg" alt="Tema Claro" width="100%" draggable="false" ondragstart="return false;">
                     </div>
+
+                    <div class="info-categorias">
+                      <div class="categoria">
+                        <img id="cat_camera" src="/Images/linda-camara.gif" alt="">
+                        <span>Fotografía</span>
+                      </div>
+                      <div class="categoria">
+                        <img id="cat_video" src="/Images/video.gif" alt="">
+                        <span>Video</span>
+                      </div>
+                      <div class="categoria">
+                        <img id="cat_otros" src="/Images/marco.gif" alt="">
+                        <span>Otros</span>
+                      </div>
+                    
+                    </div>
+
+
                 </div>
             </section>
             
@@ -373,85 +396,72 @@
 
                 <div class="grid-container">
 
-                    <!-- TARJETA PORTAFOLIO 1 -->
-                    <div class="cardPort">
-                      <img src="Images/452910612_1772328099958202_9057371772086643274_portf.webp" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
-                      <div class="cardPort__overlay">
-                        <div class="cardPort__header">
-                          <div class="cardPort__header-text">
-                            <h3 class="cardPort__titulo">Familia</h3>
-                          </div>
-                        </div>
-                        <a href="https://www.instagram.com/p/C93L8G6simS/?igsh=MTQ3Y2w1YmFmeWVlZA==">
-                          <p class="cardPort__enlaces" id="enlace">https://www.instagram.com/p/C93L8G6simS/?igsh=MTQ3Y2w1YmFmeWVlZA==</p>
-                        </a>
-                        <button class="cardPort__copy" onclick="copiarEnlace(this)">
-                          <i class="bi bi-link-45deg"></i>
-                          <span class="tooltip">Copiado</span>
-                        </button>
-                      </div>
+                <!-- TARJETA PORTAFOLIO 1 -->
+                <div class="cardPort">
+                  <div class="image-wrapper">
+                    <!-- Imagen l&l studios -->
+                    <img src="Images/452910612_1772328099958202_9057371772086643274_portf.webp" 
+                        class="cardPort__image cardPort__image-ll" 
+                        alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
+
+                    <!-- Imagen l%l studioss -->
+                    <img src="Images/452910612_1772328099958202_9057371772086643274_l_l.webp" 
+                        class="cardPort__image cardPort__image-llw" 
+                        alt="Protegida" draggable="false" ondragstart="return false;" />
                   </div>
 
-
-                    <!-- TARJETA PORTAFOLIO 2 -->
-                    <div class="cardPort">
-                      <img src="Images/453196893_481250767978251_3517827398081073273_porft.webp" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
-                      <div class="cardPort__overlay">
-                        <div class="cardPort__header">
-                          <div class="cardPort__header-text">
-                            <h3 class="cardPort__titulo">Anillos</h3>
-                          </div>
-                        </div>
-                        <a href="https://www.instagram.com/p/C98B1djhQGt/">
-                          <p class="cardPort__enlaces">https://www.instagram.com/p/C98B1djhQGt/</p>
-                        </a>
-                        <button class="cardPort__copy" onclick="copiarEnlace(this)">
-                          <i class="bi bi-link-45deg"></i>
-                          <span class="tooltip">Copiado</span>
-                        </button>
+                  <div class="cardPort__overlay">
+                    <div class="cardPort__header">
+                      <div class="cardPort__header-text">
+                        <h3 class="cardPort__titulo">Familia</h3>
                       </div>
                     </div>
-                    
+                    <a href="https://www.instagram.com/p/C93L8G6simS/?igsh=MTQ3Y2w1YmFmeWVlZA==">
+                      <p class="cardPort__enlaces" id="enlace">
+                        https://www.instagram.com/p/C93L8G6simS/?igsh=MTQ3Y2w1YmFmeWVlZA==
+                      </p>
+                    </a>
+                    <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                      <i class="bi bi-link-45deg"></i>
+                      <span class="tooltip">Copiado</span>
+                    </button>
+                  </div>
+                </div>
 
+                <!-- TARJETA PORTAFOLIO 2 -->
+                <div class="cardPort">
+                  <div class="image-wrapper">
+                    <!-- Imagen l&l studios -->
+                    <img src="Images/453196893_481250767978251_3517827398081073273_porft.webp" 
+                        class="cardPort__image cardPort__image-ll" 
+                        alt="Imagen de ejemplo" draggable="false" ondragstart="return false;" />
 
-                    <!-- TARJETA PORTAFOLIO 3 -->
-                    <div class="cardPort">
-                        <img src="https://i.imgur.com/oYiTqum.jpg" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;"/>
-                        <div class="cardPort__overlay">
-                          <div class="cardPort__header">
-                            <div class="cardPort__header-text">
-                              <h3 class="cardPort__titulo">Noches</h3>
-                            </div>
-                          </div>
-                          <a href="#">
-                            <p class="cardPort__enlaces" id="enlace">https://ejemplo.com/enlace</p>
-                          </a>
-                          <button class="cardPort__copy" onclick="copiarEnlace(this)">
-                            <i class="bi bi-link-45deg"></i>
-                            <span class="tooltip">Copiado</span>
-                          </button>
-                        </div>
+                    <!-- Imagen l%l studioss -->
+                    <img src="Images/453196893_481250767978251_3517827398081073273_l_l.webp" 
+                        class="cardPort__image cardPort__image-llw" 
+                        alt="Protegida" draggable="false" ondragstart="return false;" />
+                  </div>
+
+                  <div class="cardPort__overlay">
+                    <div class="cardPort__header">
+                      <div class="cardPort__header-text">
+                        <h3 class="cardPort__titulo">Anillos</h3>
+                      </div>
                     </div>
+                    <a href="https://www.instagram.com/p/C98B1djhQGt/">
+                      <p class="cardPort__enlaces" id="enlace">
+                        https://www.instagram.com/p/C98B1djhQGt/
+                      </p>
+                    </a>
+                    <button class="cardPort__copy" onclick="copiarEnlace(this)">
+                      <i class="bi bi-link-45deg"></i>
+                      <span class="tooltip">Copiado</span>
+                    </button>
+                  </div>
+                </div>
 
 
-                    <!-- TARJETA PORTAFOLIO 4 -->
-                    <div class="cardPort">
-                        <img src="https://i.imgur.com/oYiTqum.jpg" class="cardPort__image" alt="Imagen de ejemplo" draggable="false" ondragstart="return false;"/>
-                        <div class="cardPort__overlay">
-                          <div class="cardPort__header">
-                            <div class="cardPort__header-text">
-                              <h3 class="cardPort__titulo">Levi</h3>
-                            </div>
-                          </div>
-                          <a href="#">
-                            <p class="cardPort__enlaces" id="enlace">https://ejemplo.com/enlace</p>
-                          </a>
-                          <button class="cardPort__copy" onclick="copiarEnlace(this)">
-                            <i class="bi bi-link-45deg"></i>
-                            <span class="tooltip">Copiado</span>
-                          </button>
-                        </div>
-                    </div>
+               
                     
 
                 </div>
@@ -460,7 +470,6 @@
             </section>
             <br>
 
-            
 
             <!-- SECTION CONTACTO -->
             <section class="section contacto" id="contacto">
@@ -590,7 +599,8 @@
             
               <!-- Copyright abajo -->
                <div class="area-copy">
-                <p class="copyFooter">Copyright &copy; 2025 L&L Studios. Todos los derechos reservados.</p>
+                <p class="copyFooter">© 2025 L&L Studios. Todos los derechos reservados.</p>
+                <p class="copyFootermini">Las imágenes y el contenido de este sitio pertenecen a L&L Studios, protegidos por derechos de autor. </p>
                </div>
               
             </footer>
@@ -598,10 +608,12 @@
 
         </div>
         <div class="image-container">
-            <img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">
+          <img src="/Images/contenedor_llstudios_canon.png" alt="image">
+             <!--<img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">-->
         </div>
     </div>
        
-   <script src="Plantillas/scripts_index.js"></script> 
+  <script src="Plantillas/scripts_index.js"></script> 
+
 </body>
 </html>
