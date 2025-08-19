@@ -413,24 +413,44 @@ justify-content: center;
   }
 
   /* Teléfonos medianos (375px - 424px) */
-  @media (min-width: 375px) and (max-width: 424px) { 
+  @media (min-width: 375px) and (max-width: 425px) { 
     .grid-container {
       grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
     }
   }
 
   /* Teléfonos grandes (425px - 767px) */
-  @media (min-width: 425px) and (max-width: 550px) { 
+  @media (min-width: 424px) and (max-width: 550px) { 
     .grid-container {
       grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
     }
   }
 
   /* Mini tables (551px - 720px) */
-  @media (min-width: 551px) and (max-width: 729px) { 
+  @media (min-width: 550px) and (max-width: 729px) { 
     .grid-container {
       grid-template-columns: repeat(2, 1fr); /* 2 tarjeta por fila */
     }
+
+    .icono_F{
+      width: 30px; height: auto;
+    }
+
+    .icono_V{
+      width: 30px; height: auto;
+    }
+
+    .icono_FV{
+      width: 35px; height: auto;
+    }
+
+    .tituloF {
+      font-size: 1.7em;
+      font-weight: 500;
+      text-wrap: balance;
+      word-break: break-word; /* Permite que el texto se divida en varias líneas si es necesario */
+    }
+
   }
 
   /* Tablets (730px - 1024px) */

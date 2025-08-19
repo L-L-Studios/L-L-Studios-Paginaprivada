@@ -327,10 +327,19 @@
   color: white;
 }
 
+ /* Mini tables (551px - 720px) */
+  @media (min-width: 550px) and (max-width: 729px) { 
+    .cardWhatsapp-cont, .cardInstagram-cont{
+      min-width: 200px;
+      max-width: 300px;
+    }
+
+  }
+
 @media screen and (max-width: 768px) {
 
   .cardWhatsapp-cont, .cardInstagram-cont{
-    margin-bottom: 60px;
+    margin-bottom: 60px; 
   }
 
   .back-whats, .back-inst {
