@@ -1,6 +1,7 @@
-*{
+/**{
   outline: 1px solid yellow; 
 }
+*/
 
 /*SCROLL-BAR*/
 ::-webkit-scrollbar{
@@ -94,6 +95,107 @@
     opacity: 0; /* Se desvanece */
   }
 }
+
+/*ANIMACION NOTIFICACION TOAST*/
+:root{
+  --bg_toast: #0b0f14;
+  --card_toast: rgba(255,255,255,0.04);
+  --glass_toast: rgba(255,255,255,0.03);
+  --neon_toast: #FFE100;
+  --neon-2_toast: #CB2D2D;
+  --text_toast: #eaf6ff;
+  --muted_toast: rgba(234,246,255,0.65);
+  --danger_toast: #ff6b6b;
+  --radius_toast: 12px;
+  --shadow-neon: 0 4px 30px rgba(110,240,255,0.06), 0 0 18px rgba(110,240,255,0.06);
+}
+
+.toast-wrap{
+  position:fixed;
+  right:1.25rem;
+  bottom:1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap: .6rem;
+  z-index:9999;
+  pointer-events:none;
+}
+
+.toast{
+  pointer-events:auto;
+  min-width:280px;
+  max-width:420px;
+  padding:.75rem .9rem;
+  border-radius:var(--radius_toast);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+  box-shadow: 0 6px 24px rgba(2,6,23,0.6), 0 0 18px rgba(155,110,255,0.06);
+  transform-origin:100% 100%;
+  overflow:hidden;
+  position:relative;
+  transition: transform .18s cubic-bezier(.2,.9,.3,1), opacity .18s ease;
+  opacity:0;
+  transform:translateY(8px) scale(.98);
+  background: #181818;
+}
+.toast.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.toast .icon{
+  width:44px;height:44px;border-radius:10px;display:grid;place-items:center;
+  background: linear-gradient(135deg, rgba(110,240,255,0.08), rgba(155,110,255,0.06));
+  border:1px solid rgba(110,240,255,0.12);
+  box-shadow: 0 4px 18px rgba(110,240,255,0.06), inset 0 -6px 18px rgba(0,0,0,0.25);
+  flex:0 0 44px;
+}
+.toast .icon svg{width:22px;height:22px;display:block}
+.toast .content{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px}
+.toast .title{font-weight:600;font-size:.95rem;color:var(--text_toast)}
+.toast .msg{font-size:.86rem;color:var(--muted_toast)}
+.toast .actions{display:flex;align-items:center;gap:.4rem}
+.close-btn{
+  background:transparent;border:0;padding:.35rem;border-radius:8px;cursor:pointer;display:inline-grid;place-items:center;line-height:0;
+  color:var(--muted_toast);
+}
+.close-btn:hover{color:var(--text_toast);transform:translateY(-2px)}
+
+.accent{
+  position:absolute;
+  left:0;
+  top:0;
+  height:3px;
+  width:100%;
+  background:linear-gradient(90deg,var(--neon_toast),var(--neon-2_toast));
+  opacity:.9;
+  filter:blur(6px);
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon_toast), var(--neon-2_toast));
+  transform-origin: left;
+  width: 100%;
+  animation: progressBar linear forwards; /* 👈 faltaba */
+}
+
+@keyframes progressBar {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+
+@media (max-width:420px){
+  .toast{min-width:230px}
+  .toast-wrap{left:1rem;right:1rem}
+}
+
 
 
 

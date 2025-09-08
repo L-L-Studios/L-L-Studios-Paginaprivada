@@ -181,3 +181,5 @@ document.querySelector('.cardCont').addEventListener('click', () => {
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
 });
+
+

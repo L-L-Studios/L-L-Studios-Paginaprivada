@@ -2,6 +2,7 @@
 
     :root{
       --surface-color:  rgba(255, 255, 255, 0.7); /* Fondo translúcido */; 
+      --surface-white: rgba(255, 255, 255); /* Fondo blanco */;
       --curve: 40;
       --transition-speed: 0.2s;
   }
@@ -124,7 +125,7 @@
       align-items: center;
       gap: 2em;
       padding: 1.5em;
-      border-radius: calc(var(--curve) * 1px) 0 0 0;    
+      border-radius: calc(var(--curve) * 1px) 0 0 0;   
       background-color: white;
       transform: translateY(-100%);
       transition: .2s ease-in-out;
@@ -133,6 +134,20 @@
     .cardPort:hover .cardPort__header {
       transform: translateY(0);
     }
+
+    .cardPort__arc {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      bottom: 100%;
+      right: 0;      
+      z-index: 1;
+    }
+
+    .cardPort__arc path {
+      fill: var(--surface-white);
+      d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+    }  
     
     .cardPort__titulo {
       font-size: 1em;
@@ -145,7 +160,7 @@
       padding: 0 1.5em 2em;
       padding-top: 0.8rem;
       margin: 0;
-      color: #6c67d3;
+      color: #c73434;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       line-clamp: 3;

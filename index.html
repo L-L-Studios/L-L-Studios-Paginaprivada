@@ -90,6 +90,7 @@
 
 
                 </div>
+
             </section>
             
             
@@ -412,6 +413,7 @@
 
                   <div class="cardPort__overlay">
                     <div class="cardPort__header">
+                      <svg class="cardPort__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
                       <div class="cardPort__header-text">
                         <h3 class="cardPort__titulo">Familia</h3>
                       </div>
@@ -444,6 +446,7 @@
 
                   <div class="cardPort__overlay">
                     <div class="cardPort__header">
+                      <svg class="cardPort__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
                       <div class="cardPort__header-text">
                         <h3 class="cardPort__titulo">Anillos</h3>
                       </div>
@@ -493,6 +496,7 @@
                           
                           <div class="cont2-whats">
                             <div class="cuadroverde">
+                              <img src="/Images/3d_glass_whats.png" alt="" class="img_glass_whats">
                               <div class="contentBox">
                                   <p>CONTACTA CON NOSOTROS.</p>
                               </div>
@@ -604,11 +608,65 @@
         </div>
         <div class="image-container">
           <img src="/Images/contenedor_llstudios_canon.png" alt="image">
-             <!--<img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">-->
+             <!--<img src="https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp" alt="image">-->  
         </div>
+
+        <!-- TOAST-->
+             <div class="toast-section">
+                  <div id="toastWrap" class="toast-wrap" aria-live="polite" aria-atomic="true"></div>
+            </div>
+            
     </div>
        
   <script src="Plantillas/scripts_index.js"></script> 
+
+  <!-- Script para notificaciones tipo toast -->
+  <script>
+    window.addEventListener('DOMContentLoaded', ()=>{
+      const wrap = document.getElementById('toastWrap');
+
+      function createInfoSVG(){
+        return `
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.2" fill="none"/>
+            <path d="M11.25 10.5h1.5V7.5h-1.5v3zM12 13.5v3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+          </svg>`;
+      }
+
+      function showToast(title, message, duration=6000){
+        const node = document.createElement('div');
+        node.className = 'toast';
+        node.innerHTML = `
+          <div class="accent"></div>
+          <div class="icon">${createInfoSVG()}</div>
+          <div class="content">
+            <div class="title">${title}</div>
+            <div class="msg">${message}</div>
+          </div>
+          <div class="actions">
+            <button class="close-btn">✕</button>
+          </div>
+          <div class="progress" style="animation-duration:${duration}ms"></div>
+        `;
+
+        wrap.prepend(node);
+        requestAnimationFrame(()=> node.classList.add('show'));
+
+        const closeBtn = node.querySelector('.close-btn');
+        closeBtn.addEventListener('click', ()=> close());
+
+        function close(){
+          node.classList.remove('show');
+          setTimeout(()=> node.remove(), 250);
+        }
+
+        setTimeout(close, duration);
+      }
+
+      // Mostrar toast al cargar
+      showToast("Información","Da click una vez para ver la animación y da click 2 veces para restaurarlo.",8000);
+    });
+  </script>
 
 </body>
 </html>
