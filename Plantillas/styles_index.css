@@ -349,6 +349,11 @@
       background-color: white; /* Color de la línea */
       margin: 6px 20px -15px 20px; /*Top-right-bottom-left*/
     }
+
+    .group-list{
+      align-self: flex-start;
+      justify-content: center;
+    }
     
     .ListFooter {
       display: flex;
@@ -361,16 +366,18 @@
     .ListFooter ul {
       list-style: none;
       padding: 0;
-    }
-    
-    .ListFooter h2 {
-      font-size: 1.2em;
-    }
-    
-    .ListFooter li {
-      margin-bottom: 2vw;
+      display: flex;
+      align-items: center;
+      gap: 50px; /* Espacio entre los elementos de la lista */
     }
 
+    .ListFooter h2{
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
     .area-copy{
       padding: 25px 25px 30px 25px; /*Top-right-bottom-left*/
       width: 100%;
