@@ -149,6 +149,7 @@ cards.forEach((card) => {
 
 
 /* FUNCION PARA COPIAR ENLACE*/
+/* copiar enlace imagen */
 function copiarEnlace(boton) {
   // Encuentra el enlace correspondiente al botón clicado
   const enlace = boton.parentElement.querySelector(".cardPort__enlaces").textContent;
@@ -165,6 +166,26 @@ function copiarEnlace(boton) {
     console.error("Error al copiar el enlace: ", err);
   });
 }
+
+/* copiar enlace video */
+function copiarEnlaceVideo(boton) {
+  // Encuentra el enlace correspondiente al botón clicado
+  const enlace = boton.parentElement.querySelector(".videoPort__enlace").textContent;
+
+  navigator.clipboard.writeText(enlace).then(() => {
+    // Agrega la clase para mostrar el tooltip
+    boton.classList.add("show-tooltip");
+
+    // Elimina la clase después de 2 segundos
+    setTimeout(() => {
+      boton.classList.remove("show-tooltip");
+    }, 2000);
+  }).catch(err => {
+    console.error("Error al copiar el enlace: ", err);
+  });
+}
+
+
 
 document.querySelector('.cardCont').addEventListener('click', () => {
   const icon = document.querySelector('.icon');

@@ -1,36 +1,8 @@
-    /*GRID TARJETAS GROUP*/
-
-    :root{
-      --surface-color:  rgba(255, 255, 255, 0.7); /* Fondo translúcido */; 
-      --surface-white: rgba(255, 255, 255); /* Fondo blanco */;
-      --curve: 40;
-      --transition-speed: 0.2s;
-  }
-
-    /* Margen a los títulos */
-    #lbl_portafolio{
-        margin: 20px 20px; /* Márgenes superior e inferior */
-        font-size: 40px;
-    }
-
-    /* Línea debajo de los títulos */
-    .lineaportafolio {
-      width: 16%; /* La línea comienza con un ancho de 0 */
-      height: 3px; /* Altura de la línea */
-      background-color: #e6683c;
-      transition: width 1s ease-in-out; /* Animación suave de la línea */
-      margin-top: 4px; /* Espacio entre el texto y la línea */
-    }
-
-    /* Animación al pasar el ratón */
-    #lbl_portafolio:hover + .lineaportafolio{
-      width: 100%; /* La línea se expande al 100% de ancho */
-    }
-
-    .cardPort {
+   
+   .videoPort {
       position: relative;
       display: block;
-      margin: 10px 10px;
+      margin: -10px 10px;
       border-radius: calc(var(--curve) * 1px);
       overflow: hidden;
       text-decoration: none;
@@ -40,22 +12,21 @@
 
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
-      opacity: 0;
     }
 
-    .cardPort.visible{
+    .videoPort.visible{
       opacity: 1;
       transform: translateY(0);
     }
 
-    .image-wrapper {
+    .video-wrapper {
       position: relative;
       width: 100%;
       height: 100%;
     }
 
     /* Contenedor de la imagen */
-    .cardPort__image {
+    .videoPort__video {
       width: 100%;
       height: 100%;
       object-fit: cover; /* Asegura que la imagen mantenga su proporción */
@@ -64,33 +35,11 @@
     }
     
     /* Efecto de zoom solo en la imagen */
-    .cardPort:hover .cardPort__image {
+    .videoPort:hover .videoPort__video {
       transform: scale(1.1); /*Incrementa el tamaño de la imagen */
     }
-
-    .cardPort__image-ll {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .cardPort__image-llw {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      pointer-events: auto; /* esta imagen atrapa clics y descargas */
-      opacity: 0; 
-    }
-
-    .cardPort__image-llw.visible {
-      opacity: 1; 
-    }
     
-    .cardPort__overlay {
+    .videoPort__overlay {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -103,7 +52,7 @@
     }
     
     /* Capa de blur separada */
-    .cardPort__overlay::before {
+    .videoPort__overlay::before {
       content: "";
       position: absolute;
       top: 0;
@@ -115,11 +64,11 @@
       border-radius: inherit; /* Coincide con el contenedor */
     }
     
-    .cardPort:hover .cardPort__overlay {
+    .videoPort:hover .videoPort__overlay {
       transform: translateY(0);
     }
     
-    .cardPort__header {
+    .videoPort__header {
       position: relative;
       display: flex;
       align-items: center;
@@ -131,11 +80,11 @@
       transition: .2s ease-in-out;
     }      
     
-    .cardPort:hover .cardPort__header {
+    .videoPort:hover .videoPort__header {
       transform: translateY(0);
     }
 
-    .cardPort__arc {
+    .videoPort__arc {
       width: 80px;
       height: 80px;
       position: absolute;
@@ -144,19 +93,19 @@
       z-index: 1;
     }
 
-    .cardPort__arc path {
+    .videoPort__arc path {
       fill: var(--surface-white);
       d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
     }  
     
-    .cardPort__titulo {
+    .videoPort__titulo {
       font-size: 1em;
       margin: 0 0 .3em;
       color: #CB2D2D;
       font-weight: bold;
     }
     
-    .cardPort__enlaces {
+    .videoPort__enlace {
       padding: 0 1.5em 2em;
       padding-top: 0.8rem;
       margin: 0;
@@ -172,7 +121,7 @@
       display: block;
     }    
 
-    .cardPort__copy {
+    .videoPort__copy {
       margin-left: 1em;
       margin-bottom: 1.5em;
       background-color: #CB2D2D;
@@ -190,7 +139,7 @@
       transition: background-color var(--transition-speed);
     }
     
-    .cardPort__copy:hover {
+    .videoPort__copy:hover {
       background: #eb4d03;
     }
 
@@ -210,7 +159,7 @@
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
-    .cardPort__copy.show-tooltip .tooltip {
+    .videoPort__copy.show-tooltip .tooltip {
       opacity: 1;
       visibility: visible;
     }

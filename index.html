@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Plantillas/styles_index_inicio.css">
     <link rel="stylesheet" href="Plantillas/styles_index_paquetes.css">
     <link rel="stylesheet" href="Plantillas/styles_index_portafolio.css">
+    <link rel="stylesheet" href="Plantillas/styles_index_port_video.css">
     <link rel="stylesheet" href="Plantillas/styles_index_contacto.css">
     <link rel="website icon" href="Images/logo_l&lStudios.svg">
 
@@ -463,6 +464,36 @@
                   </div>
                 </div>
 
+                <!-- TARJETA DE VIDEO -->
+                <div class="videoPort">
+                  <div class="video-wrapper">
+                    <video 
+                      src="Videos/camera_luz.mp4" 
+                      class="videoPort__video" 
+                      muted 
+                      loop 
+                      preload="metadata"
+                    ></video>
+                  </div>
+
+                  <div class="videoPort__overlay">
+                    <div class="videoPort__header">
+                       <svg class="cardPort__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+                      <h3 class="videoPort__titulo">Demo Reel</h3>
+                    </div>
+
+                    <a href="https://www.instagram.com/p/xxxxxx/" target="_blank">
+                      <p class="videoPort__enlace">https://www.instagram.com/p/xxxxxx/</p>
+                    </a>
+
+                    <button class="videoPort__copy" onclick="copiarEnlaceVideo(this)">
+                      <i class="bi bi-link-45deg"></i>
+                      <span class="tooltip">Copiado</span>
+                    </button>
+                  </div>
+                </div>
+
+
 
                
                     
@@ -619,6 +650,7 @@
     </div>
        
   <script src="Plantillas/scripts_index.js"></script> 
+  <script src="Plantillas/script_video_port.js"></script> 
 
   <!-- Script para notificaciones tipo toast -->
   <script>
